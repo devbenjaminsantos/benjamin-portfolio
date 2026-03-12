@@ -1,143 +1,258 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-	<title>Benjamin | #1 Projeto de Apresentação Pessoal</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Benjamin.dev | Portfolio</title>
 
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-	
-	<!--Início Cabeçalho-->
-	<header class="header">
-		<div class="wrapper">
-			<nav class="nav">
-				<h1 class="logo">Benjamin.dev</h1>
-				<ul class="nav-links">
-					<li><a href="#sobre" data-i18n="nav_about">Sobre</a></li>
-					<li><a href="#habilidades" data-i18n="nav_skills">Habilidades</a></li>
-					<li><a href="#projetos" data-i18n="nav_projects">Projetos</a></li>
-					<li><a href="#contato" data-i18n="nav_contact">Contato</a></li>
-				</ul>
-	<!--Fim Cabeçalho-->
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <!-- NAVBAR -->
+      <nav class="nav">
+        <h1 class="logo">Benjamin.dev</h1>
 
-			<div class="lang-switch">
-  <button type="button" data-lang="pt" class="lang-btn active" aria-pressed="true">PT</button>
-  <button type="button" data-lang="en" class="lang-btn" aria-pressed="false">EN</button>
-</div>
-		</nav>
-	
-	<!-- Texto sobre mim -->
-			<section class="hero">
-				<div class="hero-text">
-				
-					<h2 data-i18n="hero_title">Olá, me chamo Benjamin</h2>
-				
-					<p data-i18n="hero_sub">Desenvolvedor em formação, focado em construir experiências simples</p>
-				
-					<div class="hero-buttons">
-					<a href="#projetos" class="btn primary" data-i18n="hero_btn_projects">Ver projetos</a>
-					<a href="#contato" class="btn secondary" data-i18n="hero_btn_contact">Entrar em contato</a>
-					</div>
-				</div>
-			</section>
-		</div>
-	</header>
-	
+        <ul class="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#jornada">Jornada</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#certificacoes">Certificações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
 
-	<main>
-		
-		<div class="wrapper">
-				<section id="sobre" class="section">
-			
-			<h2 data-i18n="sobre_title">Sobre mim</h2>
-			
-			<p data-i18n="sobre_p1">Tenho 19 anos, sou estudante de Análise e Desenvolvimento de Sistemas, me encontro no 5º período.</p>
-		
-		</section>
+        <div class="nav-actions">
+          <!-- botão idioma -->
+          <button type="button" id="lang-toggle">PT / EN</button>
 
-	<section id="habilidades" class="section section-alt">
-		
-		<h2 data-i18n="habilidades_title">Habilidades</h2>
-		
-		<div class="skills">
-			<div>
-				<h3 data-i18n="estudando_agora">Estudando agora</h3>
-				<ul>
-					<li>HTML5</li>
-					<li>CSS3</li>
-					<li>JavaScript</li>
-				</ul>
-			</div>
+          <!-- botão tema -->
+          <button type="button" id="theme-toggle">🌙</button>
+        </div>
+      </nav>
 
-			<div>
-				<h3 data-i18n="proximos_passos">Próximos passos</h3>
-				<ul>
-					<li>Git & GitHub</li>
-					<li>React</li>
-					<li>Node.js</li>
-				</ul>
-			</div>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h2>Olá, eu sou Benjamin</h2>
 
-		</div>
-	
-	</section>
-	
-	<!-- Texto sobre projetos -->
-	<section id="projetos" class="section">
-		
-		<h2 data-i18n="projetos_title">Projetos</h2>
-		<div class="projects">
-			
-			<article class="project-card">
-				<h3 data-i18n="proj1_title">Landing Page</h3>
-				<p data-i18n="proj1_desc">Por enquanto, só há esse meu primeiro projeto, entretanto, toda vez que eu criar um novo, vou adicioná-lo aqui sua menção, bem como, uma link para visualizar ele.</p>
-				<a href="https://github.com/devbenjaminsantos/landing-page" target="_blank" rel="noopener noreferrer" class="project-link" data-i18n="proj1_link">Ver no GitHub</a>
-			</article>
-		
-			<article class="project-card">
-				<h3 data-i18n="proj2_title">Dashboard (em execução)</h3>
-				<p data-i18n="proj2_desc">Um projeto para organizar gastos por categoria e visualizar os gastos mensais</p>
-			</article>
+            <h3>Front-End Developer in Training</h3>
 
-			<article class="project-card">
-				<h3 data-i18n="proj3_title"=>Rastreador (em execução)</h3>
-				<p data-i18n="proj3_desc">Ainda pensando em uma introdução</p>
-			</article>
-		
-		</div>
+            <p>
+              Estudante de Análise e Desenvolvimento de Sistemas focado em
+              desenvolvimento web, construção de interfaces e criação de
+              projetos práticos.
+            </p>
 
-	</section>
-	
-	<!-- Informações adicionais -->
-	<section id="contato" class="section section-alt">
-		
-		<h2 data-i18n="contato_title">Contato</h2>
-		
-		<p data-i18n="contato_sub">Sou muito receptivo a sugestões de projetos, linguagens novas para estudar ou apenas para falar sobre a beleza da programação, entre em contato comigo</p>
-		
-		<ul class="contact-list">
-			<li>Email: <a href="mailto:benjaminmontenegro.bm@gmail.com">benjaminmontenegro.bm@gmail.com</a></li>
-			<li>GitHub: <a href="https://github.com/devbenjaminsantos" target="_blank" rel="noopener noreferrer">https://github.com/devbenjaminsantos</a></li>
-			<li>LinkdIn: <a href="www.linkedin.com/in/benjaminmontenegro" target="_blank" rel="noopener noreferrer">www.linkedin.com/in/benjaminmontenegro</a></li>
-		</ul>
+            <div class="hero-buttons">
+              <a href="#projetos" class="btn">Ver Projetos</a>
+              <a href="#" class="btn-secondary">GitHub</a>
+            </div>
+          </div>
+          <!--
+          <div class="hero-image">
+            <img src="assets/img/profile.png" alt="Foto de Benjamin" />
+          </div>-->
+        </div>
+      </section>
+    </header>
 
-	</section>
+    <!-- MAIN -->
+    <main>
+      <!-- SOBRE -->
+      <section id="sobre" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Sobre Mim</h2>
+            <p>Um pouco sobre minha jornada e objetivos.</p>
+          </div>
 
-	</div>
+          <div class="about-content">
+            <p>
+              Atualmente estudo Análise e Desenvolvimento de Sistemas e estou
+              construindo minha base em desenvolvimento web com HTML, CSS e
+              JavaScript.
+            </p>
 
-	</main>
+            <p>
+              Tenho interesse especial em criação de interfaces, organização de
+              código e construção de projetos que demonstrem evolução técnica.
+            </p>
+          </div>
+        </div>
+      </section>
 
-	<footer class="footer">
-		<p>2025 Benjamin.</p>
-	</footer>
+      <!-- HABILIDADES -->
+      <section id="habilidades" class="section">
+        <div class="container">
+        <div class="section-header">
+          <h2>Habilidades</h2>
+          <p>Tecnologias e ferramentas que fazem parte da minha jornada.</p>
+        </div>
 
-	<script src="js/script.js"></script>
+        <div class="skills-grid">
+          <article class="card skills-card">
+            <h3>Front-End</h3>
+            <ul>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Bootstrap</li>
+            </ul>
+          </article>
 
+          <article class="card skills-card">
+            <h3>Ferramentas</h3>
+            <ul>
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>GitHub Pages</li>
+            </ul>
+          </article>
 
-</body>
+          <article class="card skills-card">
+            <h3>Em Estudo</h3>
+            <ul>
+              <li>Responsividade</li>
+              <li>Manipulação do DOM</li>
+              <li>Boas práticas de código</li>
+            </ul>
+          </article>
+
+          <article class="card skills-card">
+            <h3>Próximos Passos</h3>
+            <ul>
+              <li>React</li>
+              <li>APIs REST</li>
+              <li>TypeScript</li>
+              <li>Node.js</li>
+            </ul>
+          </article>
+        </div>
+        </<div class="btn-group-vertical" role="group" aria-label="">
+          <button type="button" class="btn btn-secondary">First One</button>
+          <button type="button" class="btn btn-secondary">Second One</button>
+          <div class="btn-group" role="group">
+            <button
+              id="dropdownId"
+              type="button"
+              class="btn btn-secondary dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              More
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownId">
+              <a class="dropdown-item" href="#">First Dropdown</a>
+              <a class="dropdown-item" href="#">Second Dropdown</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      </section>
+
+      <!-- JORNADA -->
+      <section id="jornada" class="section">
+        <div class="container">
+        <div class="section-header">
+          <h2>Minha Jornada</h2>
+          <p>Evolução na programação.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="card timeline-item">
+            <h3>2025</h3>
+            <p>Início dos estudos mais estruturados em desenvolvimento web.</p>
+          </article>
+
+          <article class="card timeline-item">
+            <h3>HTML / CSS / JS</h3>
+            <p>
+              Construção de projetos práticos e entendimento da base da web.
+            </p>
+          </article>
+
+          <article class="card timeline-item">
+            <h3>2026</h3>
+            <p>Primeiro projeto publicado com GitHub Pages.</p>
+          </article>
+        </div>
+        </div>
+      </section>
+
+      <!-- PROJETOS -->
+      <section id="projetos" class="section">
+       <div class="container">
+        <div class="section-header">
+          <h2>Projetos</h2>
+          <p>Projetos que mostram minha evolução prática.</p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="card project-card">
+            <h3>Landing Page</h3>
+
+            <p>
+              Projeto de landing page pessoal com suporte a dois idiomas, GitHub
+              Pages e organização de código.
+            </p>
+
+            <div class="project-links">
+              <a href="#">GitHub</a>
+              <a href="#">Live</a>
+            </div>
+          </article>
+        </div>
+        </div>
+      </section>
+
+      <!-- CERTIFICAÇÕES -->
+      <section id="certificacoes" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Certificações</h2>
+            <p>Cursos e estudos complementares.</p>
+          </div>
+
+        <div class="certifications-grid">
+          <article class="card certificate-card">
+            <h3>HTML e CSS</h3>
+            <p>Curso de desenvolvimento web.</p>
+          </article>
+        </div>
+        </div>
+      </section>
+
+      <!-- CONTATO -->
+      <section id="contato" class="section">
+       <div class="container">
+        <div class="section-header">
+          <h2>Contato</h2>
+          <p>Vamos conversar sobre projetos e oportunidades.</p>
+        </div>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <p>Email: benjaminmontenegro.bm@gmail.com</p>
+            <p>GitHub: github.com/devbenjaminmontenegro</p>
+            <p>LinkedIn: linkedin.com/in/benjaminmontenegro</p>
+          </div>
+        </div>
+       </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© 2026 Benjamin. Built with HTML, CSS and JavaScript.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
