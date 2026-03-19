@@ -37,7 +37,7 @@ Portfólio pessoal com projetos em produção, desenvolvido do zero com HTML, CS
 
 ### Clone o repositório
 
-git clone https://github.com/devbenjaminsantos/landing-page.git
+git clone https://github.com/devbenjaminsantos/benjamin-portfolio
 
 ### Abra o index.html no navegador
 
@@ -54,4 +54,4 @@ git clone https://github.com/devbenjaminsantos/landing-page.git
 
 ## 👨‍💻 Autor
 
-Feito por **Benjamin Montenegro** — [LinkedIn](https://linkedin.com/in/benjaminmontenegro) | [Portfólio](https://devbenjaminsantos.github.io/landing-page/)
+Feito por **Benjamin Montenegro** — [LinkedIn](https://linkedin.com/in/benjaminmontenegro) | [Portfólio](https://devbenjaminsantos.github.io/benjamin-portfolio/)
