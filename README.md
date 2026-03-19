@@ -1,38 +1,57 @@
-Read this in: [Português](README.pt-BR.md)
+# 🌐 Benjamin.dev — Portfólio Pessoal
 
-Live Demo: https://devbenjaminsantos.github.io/landing-page/
+Portfólio pessoal com projetos em produção, desenvolvido do zero com HTML, CSS e JavaScript puro — sem frameworks.
 
-# Landing Page
-Landing page developed for self-introduction and front-end practice, with emphasis on clean code, good practices, and multilingual support.
+🔗 [Ver projeto ao vivo](https://devbenjaminsantos.github.io/landing-page/)
 
-# Features
-- **PT/EN** language switch in real time (no page reload);
-- Language preference persisted using **LocalStorage**;
-- Semantic and accessible HTML;
-- Responsive layout;
-- Organized and commented code.
+---
 
-# Technologies
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
+## 🖼 Preview
 
-# How to Run
-No installation required. Just open `index.html` file in any modern browser.
+! [Demo](./media/demo.gif)
+! [Navbar](./media/navbar.png)
+! [Habilidades](./media/habilidades.png)
+! [Trabalhos](./media/trabalhos.png)
+! [Contato](./media/contato.png)
 
-# Project Structure
-- index.html
-- css/style.css
-- js/script.js
-- README.md
-- README.pt-BR.md
-- .gitignore
+---
 
-# Next Steps
-- Improve menu mobile responsiveness;
-- Add new projects to the "Projects" section and elaborate a link directly to each page.
+## ✨ Funcionalidades
 
-# Author
-- Benjamin Montenegro
-- GitHub: https://github.com/devbenjaminsantos
-- LinkedIn: www.linkedin.com/in/benjaminmontenegro
+- 🌍 Sistema de internacionalização PT/EN (i18n) — sem bibliotecas externas
+- 🌙 Tema claro/escuro
+- 📂 Projetos em produção com links ativos
+- 📬 Formulário de contato _(em breve)_
+
+---
+
+## 🛠 Tecnologias
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
+
+---
+
+## 🚀 Como rodar localmente
+
+### Clone o repositório
+
+git clone https://github.com/devbenjaminsantos/landing-page.git
+
+### Abra o index.html no navegador
+
+### Ou use a extensão Live Server no VS Code
+
+---
+
+## 📌 Próximos passos
+
+- [ ] Formulário de contato funcional
+- [ ] Novos projetos em produção
+
+---
+
+## 👨‍💻 Autor
+
+Feito por **Benjamin Montenegro** — [LinkedIn](https://linkedin.com/in/benjaminmontenegro) | [Portfólio](https://devbenjaminsantos.github.io/landing-page/)
