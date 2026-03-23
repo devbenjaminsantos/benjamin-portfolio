@@ -46,7 +46,7 @@ const translations = {
 
     // Hero
     hero_title: "Olá, eu sou Benjamin",
-    hero_subtitle: "Desenvolvedor Front-End",
+    hero_subtitle: "Desenvolvedor de Software",
     hero_description:
       "1 ano de experiência • 5˚ período em ADS • Inglês C1. Construindo interfaces modernas e responsivas, além de sistemas eficientes e seguros.",
     hero_btn_projects: "Ver Projetos",
@@ -109,7 +109,7 @@ const translations = {
 
     // Hero
     hero_title: "Hello, I'm Benjamin",
-    hero_subtitle: "Front-End Developer",
+    hero_subtitle: "Software Developer",
     hero_description:
       "1 year of experience • 5th semester in SAD • English C1. Building modern and responsive interfaces, along with efficient and secure systems.",
     hero_btn_projects: "View Projects",
@@ -163,25 +163,28 @@ const translations = {
 
 const langToggle = document.getElementById("lang-toggle");
 
-function applyLanguage(language) {
+function applyLanguage(lang) {
   const elements = document.querySelectorAll("[data-i18n]");
 
   elements.forEach((element) => {
     const key = element.getAttribute("data-i18n");
 
-    if (translations[language][key]) {
-      element.textContent = translations[language][key];
+    if (translations[lang] && translations[lang][key]) {
+      element.textContent = translations[lang][key];
     }
   });
 
-  document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
-  localStorage.setItem("language", language);
+  document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
+  localStorage.setItem("language", lang);
 
-  langToggle.textContent = language === "pt" ? "PT / EN" : "EN / PT";
+  if (lang === "en") {
+    langToggle.classList.add("is-en");
+  } else {
+    langToggle.classList.remove("is-en");
+  }
 }
 
 const savedLanguage = localStorage.getItem("language") || "pt";
-
 applyLanguage(savedLanguage);
 
 langToggle.addEventListener("click", () => {
@@ -189,6 +192,17 @@ langToggle.addEventListener("click", () => {
   const newLanguage = currentLanguage === "pt" ? "en" : "pt";
 
   applyLanguage(newLanguage);
+});
+
+langToggle.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" || event.key === "") {
+    event.preventDefault();
+
+    const currentLanguage = localStorage.getItem("language") || "pt";
+    const newLanguage = currentLanguage === "pt" ? "en" : "pt";
+
+    applyLanguage(newLanguage);
+  }
 });
 
 /* ========================
@@ -245,3 +259,32 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+/* =====================
+IMAGE MODAL
+===================== */
+const profileImage = document.getElementById("profile-image");
+const imageModal = document.getElementById("image-modal");
+const imageModalClose = document.getElementById("image-modal-close");
+
+if (profileImage && imageModal && imageModalClose) {
+  profileImage.addEventListener("click", () => {
+    imageModal.classList.add("show");
+  });
+
+  imageModalClose.addEventListener("click", () => {
+    imageModal.classList.remove("show");
+  });
+
+  imageModal.addEventListener("click", (event) => {
+    if (event.target === imageModal) {
+      imageModal.classList.remove("show");
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      imageModal.classList.remove("show");
+    }
+  });
+}

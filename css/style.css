@@ -280,7 +280,8 @@ NAVBAR
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
+  gap: 0.5rem;
+  white-space: nowrap;
 }
 
 .nav-actions button {
@@ -345,14 +346,17 @@ HERO
 
 .hero-image {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .hero-image img {
-  width: min(100%, 320px);
-  border-radius: var(--radius-lg);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-md);
+  object-fit: cover;
 }
 
 /* =========================
@@ -851,4 +855,126 @@ CONTACT CLICKCABLE
   color: var(--color-text-secondary);
   font-size: var(--font-size-sm);
   word-break: break-word;
+}
+
+/* ===============
+IMAGE MODAL
+=============== */
+.hero-image img {
+  cursor: pointer;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+  z-index: 2000;
+}
+
+.image-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image-modal-content {
+  max-width: min(90vw, 420px);
+  max-height: 85vh;
+  border-radius: 1rem;
+  object-fit: cover;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  transform: scale(0.92);
+  transition: transform 0.25s ease;
+}
+
+.image-modal.show .image-modal-content {
+  transform: scale(1);
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.image-modal-close:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* =========================
+LANGUAGE SWITCH
+========================= */
+.lang-switch {
+  position: relative;
+  width: 78px;
+  height: 38px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  user-select: none;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.lang-switch:hover {
+  background-color: var(--color-surface-hover);
+  transform: translateY(-1px);
+}
+
+.lang-label {
+  position: relative;
+  z-index: 2;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  transition: var(--transition-fast);
+  opacity: 0.7;
+}
+
+.lang-thumb {
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+/* ACTIVE EN STATE  */
+.lang-switch.is-en .lang-thumb {
+  transform: translateX(38px);
+}
+
+.lang-switch.is-en .lang-label-right,
+.lang-switch:not(.is-en) .lang-label-left {
+  color: #0f172a;
 }

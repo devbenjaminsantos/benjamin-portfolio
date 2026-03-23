@@ -38,7 +38,17 @@
 
         <div class="nav-actions">
           <!-- botão idioma -->
-          <button type="button" id="lang-toggle">PT / EN</button>
+          <div
+            class="lang-switch"
+            id="lang-toggle"
+            role="button"
+            aria-label="Alternar idioma"
+            tabindex="0"
+          >
+            <span class="lang-label lang-label-left">PT</span>
+            <span class="lang-label lang-label-right">EN</span>
+            <span class="lang-thumb"></span>
+          </div>
 
           <!-- botão tema -->
           <button type="button" id="theme-toggle">🌙</button>
@@ -51,7 +61,7 @@
           <div class="hero-text">
             <h2 data-i18n="hero_title">Olá, eu sou Benjamin</h2>
 
-            <h3 data-i18n="hero_subtitle">Desenvolvedor Front-End</h3>
+            <h3 data-i18n="hero_subtitle">Desenvolvedor de Software</h3>
 
             <p data-i18n="hero_description">
               1 ano de experiência • 5˚ período em ADS • Inglês C1 Construindo
@@ -92,10 +102,14 @@
               </a>
             </div>
           </div>
-          <!--
+
           <div class="hero-image">
-            <img src="assets/img/profile.png" alt="Foto de Benjamin" />
-          </div>-->
+            <img
+              src="assets/foto.JPG"
+              alt="Foto de Benjamin"
+              id="profile-image"
+            />
+          </div>
         </div>
       </section>
     </header>
@@ -502,6 +516,22 @@
       <p>© 2026 Benjamin. Built with HTML, CSS and JavaScript.</p>
     </footer>
 
+    <div class="image-modal" id="image-modal">
+      <button
+        class="image-modal-close"
+        id="image-modal-close"
+        aria-label="Fechar imagem"
+      >
+        x
+      </button>
+
+      <img
+        src="assets/foto.JPG"
+        alt="Foto ampliada de Benjamin"
+        class="image-modal-content"
+        id="image-modal-content"
+      />
+    </div>
     <script src="js/script.js"></script>
   </body>
 </html>
