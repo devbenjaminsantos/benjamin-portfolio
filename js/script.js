@@ -48,36 +48,44 @@ const translations = {
     // Hero
     hero_title: "Benjamin Montenegro",
     hero_subtitle:
-      "Desenvolvedor Front-End com foco em interfaces e produtos web",
+      "Desenvolvedor Full Stack Jr. com foco em interfaces, APIs e sistemas em nuvem",
     hero_description:
-      "1 ano de experiência profissional • 5˚ período em ADS • Inglês C1. Desenvolvendo interfaces responsivas, experiências web bem resolvidas e soluções que conectam produto, negócio e usabilidade.",
+      "1 ano de experiência profissional • 5˚ período em ADS • Inglês C1. Desenvolvendo interfaces responsivas, APIs e soluções em nuvem que conectam produto, negócio e usabilidade.",
     hero_btn_projects: "Ver Projetos",
 
     // Sobre
     about_title: "Sobre Mim",
     about_subtitle:
-      "Formação, experiência prática e foco em evolução contínua.",
+      "Curiosidade técnica, produto e evolução Full Stack.",
     about_p1:
-      "Atuo no desenvolvimento Front-End com experiência profissional em interfaces para web, landing pages e projetos com foco em clareza visual, responsividade e organização de código.",
+      "Sempre fui fascinado por tecnologia, não só em usá-la, mas em entender como ela funciona. Comecei pelo Front-End, unindo clean code, SEO, UI e UX para criar interfaces atrativas, responsivas e úteis para quem usa.",
     about_p2:
-      "Também desenvolvo projetos que percorrem o fluxo completo da aplicação, integrando Front-End, Back-End com C# e SQL Server, testes e publicação. Inglês avançado (C1) e compromisso contínuo com evolução técnica.",
+      "Com o tempo, aprofundei o que acontece por trás das interfaces e me tornei Full Stack. Na Doss Imobiliária, contribuí para dobrar o volume de leads segmentados e também entreguei soluções freelance para a Rego Barros e a Ki-Dilicia. Hoje desenvolvo o Finova, uma aplicação financeira pessoal com autenticação, dados e infraestrutura em nuvem.",
 
     // Habilidades
     skills_title: "Habilidades",
     skills_subtitle:
       "Tecnologias e ferramentas que fazem parte do meu repertório.",
     skills_frontend: "Front-End",
-    skills_tools_tests: "Ferramentas / Testes",
-    skills_backend: "Back-End / Banco de Dados",
+    skills_backend: "Back-End",
+    skills_database: "Banco de Dados",
     skills_cloud: "Cloud / DevOps",
+    skills_tests: "Testes",
+    skills_tools: "Ferramentas",
 
     // Experiência
     experience_title: "Experiência",
     experience_subtitle: "Minhas experiências profissionais.",
     experience_badge_job: "Experiência Profissional",
     experience_doss_title: "Doss Imobiliária",
-    experience_doss_text:
-      "Desenvolvimento e manutenção de landing pages e interfaces responsivas para o mercado imobiliário. Responsividade mobile-first, estilização moderna, versionamento com Git e melhorias que contribuíram para aumento de 30% na captação de leads.",
+    experience_doss_point_1:
+      "Desenvolvimento completo da plataforma imobiliária, da concepção da interface ao sistema em produção.",
+    experience_doss_point_2:
+      "Criação de interfaces com foco em UX, UI e SEO, incluindo formulários segmentados por perfil, tipo de imóvel e preferências.",
+    experience_doss_point_3:
+      "Implementação de autenticação, segurança de dados, favoritos, preferências e painel administrativo com CRUD de imóveis, leads, FAQ e notícias.",
+    experience_doss_point_4:
+      "Integração com Google OAuth via Google Cloud e contribuição para dobrar os leads semanais, alcançando 20% de conversão em vendas mensais.",
 
     // Projetos
     freelance_title: "Freelancer",
@@ -91,36 +99,52 @@ const translations = {
     project_cover_finance_text: "financas • autenticacao • visao consolidada",
     project_freelance_title: "Rego Barros Consultoria",
     project_freelance_point_1:
-      "Construído com foco em presença de marca.",
+      "Site institucional para consultoria de cidadania europeia e serviços internacionais.",
     project_freelance_point_2:
-      "Estruturado para captação de leads e divulgação dos serviços.",
+      "Criação da identidade visual e design das páginas do zero.",
     project_freelance_point_3:
-      "Desenvolvido para aproximação com o público e apresentação dos serviços prestados.",
+      "Tradução do conteúdo do cliente em uma arquitetura de informação clara, organizando serviços e jornada do usuário para reduzir fricção e facilitar a conversão.",
+    project_freelance_point_4:
+      "Desenvolvimento completo com decisões de UX alinhadas à regra de negócio, SEO, responsividade e performance.",
     project_freelance_api_tag: "APIs Públicas",
     project_freelance_meta:
-      "Site institucional focado em presença de marca, captação de leads, divulgação dos serviços e fortalecimento da visibilidade no Google.",
+      "Site institucional para consultoria de cidadania europeia, com foco em clareza, conversão, SEO e performance.",
     project_freelance_2_title: "Ki-Dilicia Gourmet",
     project_freelance_2_point_1:
-      "Estruturado para pedidos online com navegação simples e objetiva.",
+      "Cardápio digital em desenvolvimento para pedidos online, com navegação simples e objetiva.",
     project_freelance_2_point_2:
-      "Finalização integrada ao WhatsApp com todas as escolhas do pedido.",
+      "Jornada guiada para escolha de produtos, adicionais e preferências antes da finalização.",
     project_freelance_2_point_3:
-      "Projeto em fase final, com fluxo funcional e interface já operante.",
+      "Integração com WhatsApp para envio do pedido com todas as escolhas organizadas.",
+    project_freelance_2_point_4:
+      "Interface construída com foco em conversão, praticidade no atendimento e experiência mobile-first.",
     project_freelance_2_meta:
-      "Cardapio digital focado em conversao, praticidade no pedido e aproximacao com o cliente por meio de um fluxo guiado ate o WhatsApp.",
+      "Cardápio digital em desenvolvimento, focado em conversão, praticidade no pedido e finalização guiada pelo WhatsApp.",
     project_admin_title: "Painel Administrativo",
     project_admin_description:
       "Interface administrativa responsiva desenvolvida com foco em organização de dados e experiência do usuário. Permite gerenciamento eficiente de informações e visualização clara de status e filtros aplicados.",
     project_finance_title: "Finova",
-    project_finance_description: "Aplicação para gestão financeira.",
+    project_finance_point_1:
+      "Aplicação de gestão financeira pessoal com arquitetura SaaS-like, dashboard personalizável e onboarding para novos usuários.",
+    project_finance_point_2:
+      "Autenticação com JWT, timeout de sessão, rigidez de senha, redefinição por email e audit logs completos.",
+    project_finance_point_3:
+      "Metas financeiras, insights automáticos, importação CSV/OFX, resumo mensal por email e compartilhamento em modo leitura.",
+    project_finance_point_4:
+      "Stack com React, TypeScript, ASP.NET Core, SQL Server, Azure, Docker e testes com Playwright, xUnit e Vitest.",
 
     // Certificações
     certifications_title: "Certificações",
     certifications_subtitle: "Cursos e estudos complementares.",
     certifications_badge_course: "Formação Complementar",
-    certifications_item_1_title: "Desenvolvimento Front-End",
-    certifications_item_2_title: "Desenvolvimento Back-End",
-    certifications_item_3_title: "Banco de Dados",
+    certifications_item_1_title: "Curso Básico Frontend",
+    certifications_item_1_stack: "HTML • CSS • JavaScript • Bootstrap",
+    certifications_item_2_title: "Curso Backend",
+    certifications_item_2_stack: "API • C# • Microsserviços • REST",
+    certifications_item_3_title: "Desenvolvimento Web com Python e Django",
+    certifications_item_3_stack: "Python • Django • Desenvolvimento Web",
+    certifications_item_4_title: "Curso Banco de Dados",
+    certifications_item_4_stack: "SQL Server",
 
     // Contato
     contact_title: "Contato",
@@ -154,35 +178,43 @@ const translations = {
     // Hero
     hero_title: "Benjamin Montenegro",
     hero_subtitle:
-      "Front-End Developer focused on interfaces and web products",
+      "Junior Full Stack Developer focused on interfaces, APIs and cloud systems",
     hero_description:
-      "1 year of professional experience • 5th semester in SAD • English C1. Building responsive interfaces, polished web experiences and solutions that connect product, business and usability.",
+      "1 year of professional experience • 5th semester in Systems Analysis and Development • English C1. Building responsive interfaces, APIs and cloud solutions that connect product, business and usability.",
     hero_btn_projects: "View Projects",
 
     // About
     about_title: "About Me",
     about_subtitle:
-      "Education, hands-on experience and a strong focus on continuous growth.",
+      "Technical curiosity, product thinking and Full Stack growth.",
     about_p1:
-      "I work in Front-End development with professional experience in web interfaces, landing pages and projects focused on visual clarity, responsiveness and code organization.",
+      "I have always been fascinated by technology, not only using it, but understanding how it works. I started with Front-End development, combining clean code, SEO, UI and UX to create attractive, responsive and useful interfaces.",
     about_p2:
-      "I also build projects that go through the full application flow, connecting Front-End, Back-End with C# and SQL Server, testing and deployment. Advanced English (C1) and a consistent commitment to technical growth.",
+      "Over time, I went deeper into what happens behind the interface and became a Full Stack developer. At Doss Imobiliária, I helped double the volume of qualified leads and also delivered freelance solutions for Rego Barros and Ki-Dilicia. Today, I am building Finova, a personal finance app with authentication, data flows and cloud infrastructure.",
 
     // Skills
     skills_title: "Skills",
     skills_subtitle: "Technologies and tools that are part of my repertoire.",
     skills_frontend: "Front-End",
-    skills_tools_tests: "Tools / Testing",
-    skills_backend: "Back-End / Database",
+    skills_backend: "Back-End",
+    skills_database: "Database",
     skills_cloud: "Cloud / DevOps",
+    skills_tests: "Testing",
+    skills_tools: "Tools",
 
     // Experience
     experience_title: "Experience",
     experience_subtitle: "My professional experiences.",
     experience_badge_job: "Professional Experience",
     experience_doss_title: "Doss Imobiliária",
-    experience_doss_text:
-      "Development and maintenance of landing pages and responsive interfaces for the real estate market. Mobile-first responsiveness, modern styling, Git versioning and improvements that contributed to a 30% increase in lead generation.",
+    experience_doss_point_1:
+      "Full development of the real estate platform, from interface concept to production system.",
+    experience_doss_point_2:
+      "Designed interfaces focused on UX, UI and SEO, including segmented forms by client profile, property type and preferences.",
+    experience_doss_point_3:
+      "Implemented authentication, data security, favorites, preferences and an admin panel with CRUD for properties, leads, FAQ and news.",
+    experience_doss_point_4:
+      "Integrated Google OAuth through Google Cloud and helped double weekly leads, reaching a 20% conversion rate in monthly sales.",
 
     // Projects
     freelance_title: "Freelance",
@@ -196,36 +228,52 @@ const translations = {
     project_cover_finance_text: "finance • authentication • consolidated view",
     project_freelance_title: "Rego Barros Consultoria",
     project_freelance_point_1:
-      "Built with a focus on brand presence.",
+      "Institutional website for European citizenship consulting and international services.",
     project_freelance_point_2:
-      "Structured for lead generation and service promotion.",
+      "Created the visual identity and page design from scratch.",
     project_freelance_point_3:
-      "Designed to strengthen audience connection and present the services offered.",
+      "Translated the client's content into a clear information architecture, organizing services and the user journey to reduce friction and improve conversion.",
+    project_freelance_point_4:
+      "Delivered the full build with UX decisions aligned to the client's business rules, SEO, responsiveness and performance.",
     project_freelance_api_tag: "Public APIs",
     project_freelance_meta:
-      "Institutional website focused on brand presence, lead generation, service promotion and stronger Google visibility.",
+      "Institutional website for European citizenship consulting, focused on clarity, conversion, SEO and performance.",
     project_freelance_2_title: "Ki-Dilicia Gourmet",
     project_freelance_2_point_1:
-      "Structured for online ordering with simple and straightforward navigation.",
+      "Digital menu in development for online ordering, with simple and straightforward navigation.",
     project_freelance_2_point_2:
-      "Checkout integrated with WhatsApp including all selected order options.",
+      "Guided journey for choosing products, add-ons and preferences before checkout.",
     project_freelance_2_point_3:
-      "Project in its final stage, with the main flow working and the interface already operational.",
+      "WhatsApp integration to send the order with all selected options organized.",
+    project_freelance_2_point_4:
+      "Interface built with a focus on conversion, practical service flow and a mobile-first experience.",
     project_freelance_2_meta:
-      "Digital menu focused on conversion, ordering practicality and customer connection through a guided flow that ends on WhatsApp.",
+      "Digital menu in development, focused on conversion, ordering practicality and guided WhatsApp checkout.",
     project_admin_title: "Admin Panel",
     project_admin_description:
       "Responsive administrative interface developed with a focus on data organization and user experience. Enables efficient information management and clear visualization of applied status and filters.",
     project_finance_title: "Finova",
-    project_finance_description: "Application for financial management.",
+    project_finance_point_1:
+      "Personal finance management app with a SaaS-like architecture, customizable dashboard and onboarding for new users.",
+    project_finance_point_2:
+      "JWT authentication, session timeout, password policy, email password reset and complete audit logs.",
+    project_finance_point_3:
+      "Financial goals, automatic spending insights, CSV/OFX import, monthly email summary and read-only dashboard sharing.",
+    project_finance_point_4:
+      "Built with React, TypeScript, ASP.NET Core, SQL Server, Azure, Docker and tests with Playwright, xUnit and Vitest.",
 
     // Certifications
     certifications_title: "Certifications",
     certifications_subtitle: "Courses and complementary studies.",
     certifications_badge_course: "Complementary Training",
-    certifications_item_1_title: "Front-End Development",
-    certifications_item_2_title: "Back-End Development",
-    certifications_item_3_title: "Database",
+    certifications_item_1_title: "Basic Frontend Course",
+    certifications_item_1_stack: "HTML • CSS • JavaScript • Bootstrap",
+    certifications_item_2_title: "Backend Course",
+    certifications_item_2_stack: "API • C# • Microservices • REST",
+    certifications_item_3_title: "Web Development with Python and Django",
+    certifications_item_3_stack: "Python • Django • Web Development",
+    certifications_item_4_title: "Database Course",
+    certifications_item_4_stack: "SQL Server",
 
     // Contact
     contact_title: "Contact",

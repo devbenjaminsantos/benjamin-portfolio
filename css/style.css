@@ -498,6 +498,25 @@ TIMELINE / JOURNEY
   color: var(--color-text-secondary);
 }
 
+.experience-points {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.experience-points li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.experience-points li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+}
+
 /* =========================
 PROJECTS
 ========================= */
