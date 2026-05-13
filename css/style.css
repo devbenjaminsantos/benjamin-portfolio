@@ -267,6 +267,14 @@ NAVBAR
   box-shadow: 0 18px 40px rgba(2, 8, 23, 0.16);
 }
 
+[data-theme="light"] .nav {
+  border-color: rgba(14, 165, 233, 0.24);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(15, 23, 42, 0.03);
+}
+
 .nav-toggle {
   display: none;
   width: 48px;
@@ -325,6 +333,15 @@ NAVBAR
   font-weight: var(--font-weight-medium);
   transition: var(--transition-fast);
   position: relative;
+}
+
+[data-theme="light"] .nav-links a {
+  color: #334155;
+}
+
+[data-theme="light"] .nav-links a:hover,
+[data-theme="light"] .nav-links a.active {
+  color: #0f172a;
 }
 
 .nav-links a.active {
@@ -876,8 +893,12 @@ PROJECT CARD REFINED
 }
 
 #freelancer .project-card-featured {
-  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  min-height: 100%;
   border-radius: calc(var(--radius-lg) + 0.15rem);
+  box-shadow: var(--shadow-sm);
 }
 
 .project-card-featured::before {
@@ -901,6 +922,10 @@ PROJECT CARD REFINED
   flex-direction: column;
   padding: var(--spacing-xl);
   min-width: 0;
+}
+
+#freelancer .project-card-featured .project-content {
+  padding: 0;
 }
 
 .project-points {
@@ -957,27 +982,38 @@ PROJECT CARD REFINED
 }
 
 .project-cover-freelance {
-  background-color: #0f172a;
+  background-color: #f8fafc;
   background-image:
-    linear-gradient(135deg, rgba(14, 165, 233, 0.24), rgba(15, 23, 42, 0.08)),
-    url("../assets/rego-barros.png");
+    linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(34, 197, 94, 0.06)),
+    url("../assets/logo-regobarros.png");
   background-position:
     center,
-    center top;
-  background-size: auto, cover;
+    center;
+  background-size:
+    auto,
+    cover;
   background-repeat: no-repeat;
 }
 
 .project-cover-freelance-alt {
-  background-color: #0f172a;
+  background-color: #fff7ed;
   background-image:
-    linear-gradient(135deg, rgba(14, 165, 233, 0.24), rgba(15, 23, 42, 0.08)),
-    url("../assets/ki-dilicia.png");
+    linear-gradient(135deg, rgba(250, 204, 21, 0.12), rgba(239, 68, 68, 0.08)),
+    url("../assets/logo-kidilicia.jpg");
   background-position:
     center,
-    center top;
-  background-size: auto, cover;
+    center;
+  background-size:
+    auto,
+    cover;
   background-repeat: no-repeat;
+}
+
+.project-cover-freelance::before,
+.project-cover-freelance-alt::before {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(15, 23, 42, 0.08)),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 32%);
 }
 
 .project-cover-finova {
@@ -1015,6 +1051,15 @@ PROJECT CARD REFINED
     background-position 0.35s ease;
 }
 
+#freelancer .project-card-featured .project-cover {
+  min-height: 180px;
+  margin: calc(var(--spacing-lg) * -1) calc(var(--spacing-lg) * -1)
+    var(--spacing-lg);
+  border-radius: var(--radius-lg) var(--radius-lg) 1.25rem 1.25rem;
+  border-right: 0;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.18);
+}
+
 .project-card-featured:hover .project-cover {
   transform: scale(1.03);
   filter: brightness(1) saturate(1.08);
@@ -1031,8 +1076,19 @@ PROJECT CARD REFINED
   transition: opacity 0.35s ease;
 }
 
+.project-card-featured .project-cover-freelance::after,
+.project-card-featured .project-cover-freelance-alt::after {
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0.04), transparent 42%);
+  opacity: 0.35;
+}
+
 .project-card-featured:hover .project-cover::after {
   opacity: 0.82;
+}
+
+.project-card-featured:hover .project-cover-freelance::after,
+.project-card-featured:hover .project-cover-freelance-alt::after {
+  opacity: 0.42;
 }
 
 .project-card h3 {
@@ -1042,6 +1098,11 @@ PROJECT CARD REFINED
 .project-card-featured h3 {
   font-size: 1.65rem;
   line-height: 1.15;
+}
+
+#freelancer .project-card-featured h3 {
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-sm);
 }
 
 #projetos .project-card {
@@ -1251,21 +1312,6 @@ CERTIFICATE REFINED
   background: linear-gradient(90deg, #22c55e, #38bdf8);
 }
 
-.platform-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--radius-full);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
-}
-
-.platform-badge.hotmart {
-  background-color: rgba(255, 106, 0, 0.12);
-  border: 1px solid rgba(255, 106, 0, 0.25);
-  color: #ff6a00;
-}
-
 /* ===============
 CONTACT REFINED
 =============== */
@@ -1317,6 +1363,18 @@ SKILL BOXES
 .skill-box i {
   font-size: 2rem;
   color: var(--color-primary);
+}
+
+.skill-box svg.skill-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--color-primary);
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.nextjs-icon path {
+  stroke: none;
 }
 
 .skill-box span {
@@ -1608,7 +1666,7 @@ LANGUAGE SWITCH
   }
 
   .freelance-grid .project-card {
-    min-height: 420px;
+    min-height: 300px;
   }
 
   .projects-grid:not(.freelance-grid) {
