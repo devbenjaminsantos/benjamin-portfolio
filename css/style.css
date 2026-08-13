@@ -268,6 +268,16 @@ h1 span { display: block; font-style: italic; }
 .independent-work > p { color: var(--text-soft) !important; font-family: var(--sans) !important; font-size: 0.98rem !important; letter-spacing: 0 !important; }
 
 .interlude { padding-block: clamp(7rem, 14vw, 13rem); border-top: 1px solid var(--border); }
+.ellie-interlude { min-height: clamp(560px, 62vw, 780px); padding-block: clamp(4rem, 9vw, 8rem); overflow: hidden; background: var(--bg-deep); }
+.ellie-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 0.48fr); min-height: clamp(450px, 48vw, 620px); }
+.ellie-space { position: relative; }
+.ellie-space::after { position: absolute; right: 0; bottom: 0; width: 1px; height: 38%; content: ""; background: var(--accent-soft); }
+.ellie-reveal { position: relative; align-self: end; width: min(100%, 420px); margin: 0 0 0 auto; overflow: hidden; }
+.ellie-reveal::before { position: absolute; inset: 0; z-index: 1; content: ""; background: linear-gradient(90deg, var(--bg-deep), transparent 34%), linear-gradient(0deg, var(--bg-deep), transparent 35%); pointer-events: none; }
+.ellie-reveal::after { position: absolute; right: 0; bottom: 0; left: 0; z-index: 2; height: 38%; content: ""; background: linear-gradient(0deg, var(--bg-deep), transparent); pointer-events: none; }
+.ellie-reveal img { width: 100%; height: clamp(460px, 54vw, 680px); object-fit: cover; object-position: 50% 64%; filter: grayscale(0.48) contrast(1.06) brightness(0.78) saturate(0.74); }
+.ellie-reveal.is-visible img { animation: ellie-breathe 6s var(--ease) both; }
+@keyframes ellie-breathe { from { transform: scale(1.06); } to { transform: scale(1); } }
 .quote { width: min(900px, calc(100% - 48px)); margin-inline: auto; text-align: center; }
 .quote blockquote { color: var(--text); font-family: var(--serif); font-size: clamp(2.7rem, 5.7vw, 5.7rem); font-style: italic; line-height: 0.95; letter-spacing: -0.045em; }
 .quote cite { display: block; margin-top: 2rem; color: var(--accent); font-family: var(--mono); font-size: 0.65rem; font-style: normal; letter-spacing: 0.14em; text-transform: uppercase; }
@@ -386,6 +396,10 @@ h1 span { display: block; font-style: italic; }
   .impact-stat.secondary { grid-column: auto; }
   .independent-work { grid-template-columns: 1fr; gap: 1rem; }
   .project-primary { grid-template-columns: 1fr; gap: 1.5rem; }
+  .ellie-interlude { min-height: 590px; padding-block: 3rem; }
+  .ellie-layout { grid-template-columns: 0.3fr minmax(0, 0.7fr); min-height: 520px; }
+  .ellie-reveal { width: 100%; }
+  .ellie-reveal img { height: 540px; object-position: 50% 62%; }
   .project-number { order: -1; }
   .finova-media { min-height: 280px; }
   .project-copy h3 { font-size: clamp(3.4rem, 18vw, 5rem); }

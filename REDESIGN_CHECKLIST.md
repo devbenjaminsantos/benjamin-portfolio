@@ -7,13 +7,15 @@ O portfólio deve continuar funcionando como uma apresentação profissional mes
 ## 0. Decisões antes de começar
 
 - [x] Escolher o universo de anime: Attack on Titan.
-- [ ] Definir a música inicial e os metadados do player.
-- [ ] Confirmar as imagens/assets permitidos para a intervenção de The Last of Us.
+- [x] Definir a música inicial: “Wires”, The Neighbourhood.
+- [x] Definir o destino oficial do player: Spotify.
+- [ ] Definir os metadados visuais do player e adicionar o link oficial de “Wires”.
+- [x] Selecionar a imagem da Ellie tocando violão para a intervenção de The Last of Us.
 - [x] Preparar a estrutura para case studies nesta versão; construir as páginas detalhadas posteriormente.
 - [ ] Confirmar dados de formação acadêmica para o capítulo Aprendizado.
 - [ ] Definir quais certificações terão links para credenciais.
 - [ ] Confirmar a estratégia de idioma: conteúdo principal em português e labels curtos em inglês.
-- [ ] Decidir se a página 404 temática entra no mesmo escopo do redesign.
+- [x] Manter a página 404 temática fora do primeiro corte do redesign.
 
 ## 1. Preparação e arquitetura
 
@@ -105,11 +107,18 @@ O portfólio deve continuar funcionando como uma apresentação profissional mes
 ## 8. Camada pessoal
 
 - [ ] Manter a personalidade como camada ambiental, sem seção de hobbies.
-- [ ] The Last of Us: usar uma intervenção visual discreta de Ellie em scroll reveal.
+- [x] The Last of Us: usar uma intervenção visual discreta de Ellie em scroll reveal entre Experiência e o interlúdio literário.
 - [ ] The Last of Us: usar a mariposa apenas como easter egg menor.
-- [ ] Bloodborne: reservar referências para interface, tooltips, mensagens, estados secretos, console e/ou 404.
+- [x] Bloodborne: usar referências discretas na interface.
+  - [x] Inserir runas pequenas em divisores ou numeração de capítulos.
+  - [x] Usar um único símbolo de lua com tooltip secreto em hover/foco.
+  - [x] Deixar a 404 e mensagens de console para uma etapa posterior.
 - [x] Attack on Titan: representar por símbolos e ideias, nunca apenas por personagem exposto.
-- [ ] Arcane: usar movimento, rabiscos e imperfeições controladas com baixa frequência.
+  - [x] Usar horizonte discreto no Hero como referência à liberdade.
+  - [x] Considerar duas ou três silhuetas de pássaros apenas como detalhe ambiental em desktop.
+- [x] Arcane: usar movimento, rabiscos e imperfeições controladas com baixa frequência.
+  - [x] Aplicar uma interferência breve no hover de títulos de projeto.
+  - [x] Aplicar uma segunda interferência breve na abertura do player de música.
 - [ ] Música: usar player próprio, pequeno e persistente, sem autoplay.
 - [ ] Mitologia: manter Argos/Ariadne e outros nomes ligados à função dos produtos.
 - [ ] Limitar os universos culturais ao conjunto definido; uma nova referência precisa substituir ou justificar sua entrada.
