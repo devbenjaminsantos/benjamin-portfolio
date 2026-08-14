@@ -37,7 +37,6 @@ const translations = {
     moon_label: "Mostrar um detalhe secreto",
     moon_tooltip: "A lua observa em silêncio.",
     experience_label: "III / EXPERIÊNCIA",
-    experience_title: "Experiência que sai da tela.",
     experience_someji_period: "JUL 2026 — ATUAL / PJ",
     experience_someji_role: "ENGENHEIRO DE SOFTWARE",
     experience_someji_intro:
@@ -73,9 +72,6 @@ const translations = {
       "“A liberdade é pouco. O que eu desejo ainda não tem nome.”",
     quote_author: "Clarice Lispector",
     work_label: "IV / PROJETOS AUTORAIS",
-    work_title: "Projetos<br /><em>autorais.</em>",
-    work_description:
-      "Produtos independentes em que posso explorar e mostrar cada decisão, da interface à arquitetura.",
     finova_kicker: "FINANÇAS PESSOAIS / SAAS-LIKE",
     finova_hook:
       "Uma aplicação financeira pessoal construída para transformar rotina, metas e gastos em uma visão mais clara.",
@@ -109,7 +105,6 @@ const translations = {
     tools_quality: "TESTES",
     tools_process: "FERRAMENTAS",
     learning_label: "VI / EDUCAÇÃO",
-    learning_title: "Formação<br /><em>&amp; certificações.</em>",
     education_label: "FORMAÇÃO",
     certifications_label: "CERTIFICAÇÕES",
     education_title: "Análise e Desenvolvimento de Sistemas",
@@ -177,7 +172,6 @@ const translations = {
     moon_label: "Show a hidden detail",
     moon_tooltip: "The moon watches in silence.",
     experience_label: "III / EXPERIENCE",
-    experience_title: "Experience beyond the screen.",
     experience_someji_period: "JUL 2026 — PRESENT / CONTRACT WORK",
     experience_someji_role: "SOFTWARE ENGINEER",
     experience_someji_intro:
@@ -213,9 +207,6 @@ const translations = {
       "“Freedom is little. What I desire still has no name.”",
     quote_author: "Clarice Lispector",
     work_label: "IV / INDEPENDENT PROJECTS",
-    work_title: "Independent<br /><em>projects.</em>",
-    work_description:
-      "Independent products where I can explore and share every decision, from interface to architecture.",
     finova_kicker: "PERSONAL FINANCE / SAAS-LIKE",
     finova_hook:
       "A personal finance app built to turn routines, goals and expenses into a clearer picture.",
@@ -249,7 +240,6 @@ const translations = {
     tools_quality: "TESTING",
     tools_process: "TOOLS",
     learning_label: "VI / EDUCATION",
-    learning_title: "Education<br /><em>&amp; certifications.</em>",
     education_label: "EDUCATION",
     certifications_label: "CERTIFICATIONS",
     education_title: "Systems Analysis and Development",
@@ -374,26 +364,27 @@ function updateCertificateDialog(trigger) {
   const title = trigger.querySelector("h3").textContent;
   const detail = trigger.querySelector("p").textContent;
   const source = trigger.dataset.certificateSrc || "";
-  const isPdf = source.toLowerCase().endsWith(".pdf");
+  const previewSource = trigger.dataset.certificatePreview || source;
+  const isPdf = previewSource.toLowerCase().endsWith(".pdf");
 
   certificateDialogTitle.textContent = title;
   certificateDialogDetail.textContent = detail;
   certificatePreviewImage.hidden = true;
   certificatePreviewPdf.hidden = true;
-  certificatePreviewEmpty.hidden = Boolean(source);
+  certificatePreviewEmpty.hidden = Boolean(previewSource);
   certificateOriginal.hidden = !source;
 
-  if (!source) return;
+  if (!previewSource) return;
 
-  certificateOriginal.href = source;
+  if (source) certificateOriginal.href = source;
   if (isPdf) {
-    certificatePreviewPdf.src = source;
+    certificatePreviewPdf.src = previewSource;
     certificatePreviewPdf.title = title;
     certificatePreviewPdf.hidden = false;
     return;
   }
 
-  certificatePreviewImage.src = source;
+  certificatePreviewImage.src = previewSource;
   certificatePreviewImage.alt = title;
   certificatePreviewImage.hidden = false;
 }
