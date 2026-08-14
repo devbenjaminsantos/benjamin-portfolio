@@ -522,8 +522,9 @@ h1 span { display: block; font-style: italic; }
 .project-metadata.compact div { grid-template-columns: 1fr; gap: 0.35rem; }
 .project-secondary .text-link { margin-top: auto; padding-top: 1.5rem; width: fit-content; }
 
-.tools-layout { align-items: start; }
-.tool-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3rem; }
+.tools-layout { display: block; }
+.tools-layout .section-heading { max-width: none; }
+.tool-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3.5rem 3rem; margin-top: clamp(3rem, 7vw, 6rem); }
 .tool-groups > div { padding-top: 0.9rem; border-top: 1px solid var(--border); }
 .tool-groups p { color: var(--accent); font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.12em; }
 .tool-groups ul { display: grid; gap: 0.3rem; margin-top: 1rem; }
@@ -646,6 +647,7 @@ h1 span { display: block; font-style: italic; }
   .metadata-list div:nth-child(n + 3) { border-top: 1px solid var(--border); }
   .work-heading { display: block; }
   .work-heading > p { margin-top: 1.4rem; }
+  .tool-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .project-primary { grid-template-columns: 2.5rem minmax(220px, 0.75fr) minmax(260px, 0.9fr); }
   .project-pair { gap: 2.5rem; }
   .project-secondary { grid-template-columns: 1fr; }
