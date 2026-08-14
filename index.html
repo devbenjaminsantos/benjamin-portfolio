@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portfólio de Benjamin Montenegro, desenvolvedor Full Stack no Rio de Janeiro."
+      content="Portfólio de Benjamin Montenegro, engenheiro de software no Rio de Janeiro."
     />
-    <title>Benjamin Montenegro — Full Stack Developer</title>
+    <title>Benjamin Montenegro — Engenheiro de Software</title>
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -60,62 +60,155 @@
             <p class="section-label" data-i18n="hero_label">I / INTRODUÇÃO</p>
             <p class="hero-greeting" data-i18n="hero_greeting">Olá, meu nome é</p>
             <h1>Benjamin <span>Montenegro</span></h1>
-            <p class="role" data-i18n="hero_role">FULL STACK DEVELOPER</p>
+            <p class="role" data-i18n="hero_role">ENGENHEIRO DE SOFTWARE</p>
             <p class="hero-description" data-i18n="hero_description">
               Desenvolvo produtos digitais do front-end à infraestrutura, transformando problemas reais em software claro e sustentável.
             </p>
             <div class="hero-actions">
               <a class="button button-accent" href="#projetos" data-i18n="hero_projects">Ver projetos <span aria-hidden="true">↘</span></a>
-              <a class="text-link" href="assets/curriculo.pdf" target="_blank" rel="noopener noreferrer" data-i18n="hero_cv">Download CV <span aria-hidden="true">↗</span></a>
+              <div class="hero-socials">
+                <a
+                  class="hero-icon-link"
+                  href="https://github.com/devbenjaminsantos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M12 2C6.48 2 2 6.58 2 12.22c0 4.5 2.87 8.32 6.84 9.67.5.1.66-.22.66-.49 0-.24-.01-1.04-.01-1.88-2.78.62-3.37-1.21-3.37-1.21-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .08 1.53 1.05 1.53 1.05.9 1.56 2.35 1.11 2.92.85.09-.67.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.05 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.71.12 2.51.36 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.92-2.33 4.79-4.56 5.04.36.32.68.95.68 1.92 0 1.39-.01 2.51-.01 2.85 0 .27.18.59.67.49A10.24 10.24 0 0 0 22 12.22C22 6.58 17.52 2 12 2Z"
+                    />
+                  </svg>
+                  <span class="sr-only">GitHub</span>
+                  <span class="icon-tooltip" aria-hidden="true">GitHub</span>
+                </a>
+                <a
+                  class="hero-icon-link"
+                  href="https://linkedin.com/in/benjaminmontenegro"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M6.94 8.5H3.56V19.5h3.38V8.5ZM5.25 3A1.97 1.97 0 0 0 3.25 5c0 1.1.88 2 1.97 2h.03a2 2 0 1 0 0-4ZM20.75 12.74c0-3.32-1.77-4.87-4.14-4.87-1.91 0-2.76 1.06-3.24 1.8V8.5H10v11h3.38v-6.14c0-.33.02-.66.12-.89.27-.66.89-1.34 1.93-1.34 1.36 0 1.91 1.05 1.91 2.59v5.78h3.38v-6.76Z"
+                    />
+                  </svg>
+                  <span class="sr-only">LinkedIn</span>
+                  <span class="icon-tooltip" aria-hidden="true">LinkedIn</span>
+                </a>
+                <a
+                  class="hero-icon-link"
+                  href="assets/curriculo.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      fill="currentColor"
+                      d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5Zm0 2.5L16.5 7H14V4.5ZM8 13h8v1.5H8V13Zm0 3h8v1.5H8V16Zm0-6h5v1.5H8V10Z"
+                    />
+                  </svg>
+                  <span class="sr-only" data-i18n="hero_cv_label">Currículo</span>
+                  <span class="icon-tooltip" aria-hidden="true" data-i18n="hero_cv_label">Currículo</span>
+                </a>
+              </div>
             </div>
             <p class="hero-location" data-i18n="hero_location">Rio de Janeiro · Brasil</p>
           </div>
 
-          <figure class="hero-portrait reveal">
-            <div class="portrait-frame">
-              <img src="assets/foto.JPG" alt="Benjamin Montenegro" />
-            </div>
-            <figcaption>
-              <span data-i18n="portrait_caption">Construindo entre interface, sistema e nuvem.</span>
-              <span aria-hidden="true">01</span>
-            </figcaption>
-          </figure>
+          <div class="hero-personal reveal">
+            <figure class="hero-portrait">
+              <div class="portrait-frame">
+                <button
+                  class="portrait-trigger"
+                  id="portrait-trigger"
+                  type="button"
+                  aria-controls="portrait-lightbox"
+                >
+                  <img src="assets/foto.JPG" alt="Benjamin Montenegro" />
+                  <span class="sr-only" data-i18n="portrait_open">Ampliar foto</span>
+                </button>
+              </div>
+              <figcaption>
+                <span data-i18n="portrait_caption">Construindo entre interface, sistema e nuvem.</span>
+                <span aria-hidden="true">01</span>
+              </figcaption>
+            </figure>
+
+            <aside class="music-player" id="music-player" aria-label="Player de música">
+              <button
+                class="music-toggle"
+                id="music-toggle"
+                type="button"
+                aria-expanded="false"
+                aria-controls="music-details"
+              >
+                <span class="music-mark" aria-hidden="true">▶</span>
+                <span class="music-summary">
+                  <span class="music-label" data-i18n="music_label">NOW PLAYING</span>
+                  <strong>Wires</strong>
+                  <span>The Neighbourhood</span>
+                </span>
+                <span class="music-indicator" aria-hidden="true"><i></i><i></i><i></i></span>
+              </button>
+              <div class="music-details" id="music-details" hidden>
+                <p data-i18n="music_description">Uma faixa para acompanhar a navegação.</p>
+                <a
+                  class="text-link"
+                  href="https://open.spotify.com/track/5v8aEcHcaJIGYpfVVPtJjI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-i18n="music_action"
+                >
+                  Ouvir no Spotify ↗
+                </a>
+              </div>
+            </aside>
+
+          </div>
         </div>
       </section>
 
       <section class="chapter about has-rune" id="sobre" data-rune="ᛟ">
-        <div class="container about-layout">
-          <div class="chapter-intro reveal">
-            <p class="section-label" data-i18n="about_label">II / SOBRE</p>
-            <h2 data-i18n="about_title">Gosto de entender como as coisas funcionam — e depois descobrir como fazê-las funcionar melhor.</h2>
+        <div class="container">
+          <div class="about-layout">
+            <div class="chapter-intro reveal">
+              <p class="section-label" data-i18n="about_label">II / SOBRE</p>
+              <h2 data-i18n="about_title">Gosto de entender como as coisas funcionam — e depois descobrir como fazê-las funcionar melhor.</h2>
+            </div>
+            <div class="about-detail reveal">
+              <p class="lead" data-i18n="about_origin">
+                Minha relação com tecnologia começou pela curiosidade: não apenas usar, mas entender como computadores geram jogos, adaptam interfaces e tornam uma animação fluida. Foi isso que me trouxe para a programação.
+              </p>
+              <p class="about-body" data-i18n="about_evolution">
+                Comecei pelo front-end, unindo clean code, SEO, UI e UX para criar experiências que façam sentido para quem usa. A vontade de entender como os dados trafegam, são validados e protegidos me levou naturalmente ao desenvolvimento full stack.
+              </p>
+            </div>
           </div>
-          <div class="about-detail reveal">
-            <p class="lead" data-i18n="about_description">
-              Desenvolvedor Full Stack baseado no Rio de Janeiro. Trabalho entre interface, backend, arquitetura e cloud, buscando construir software que seja tão fácil de manter quanto de usar.
-            </p>
-            <dl class="metadata-list">
-              <div><dt data-i18n="about_focus_label">FOCUS</dt><dd data-i18n="about_focus_value">Full Stack Development</dd></div>
-              <div><dt data-i18n="about_location_label">LOCATION</dt><dd data-i18n="about_location_value">Rio de Janeiro, Brasil</dd></div>
-              <div><dt data-i18n="about_languages_label">LANGUAGES</dt><dd data-i18n="about_languages_value">Português / Inglês C1</dd></div>
-              <div>
-                <dt data-i18n="about_current_label">CURRENTLY</dt>
-                <dd class="current-status">
-                  <span data-i18n="about_current_value">Evoluindo o Finova</span>
-                  <button
-                    class="moon-secret"
-                    id="moon-secret"
-                    type="button"
-                    aria-expanded="false"
-                    aria-controls="moon-tooltip"
-                  >
-                    <span aria-hidden="true">☾</span>
-                    <span class="sr-only" data-i18n="moon_label">Mostrar um detalhe secreto</span>
-                  </button>
-                  <span class="moon-tooltip" id="moon-tooltip" role="tooltip" data-i18n="moon_tooltip">A lua observa em silêncio.</span>
-                </dd>
-              </div>
-            </dl>
-          </div>
+
+          <dl class="metadata-list reveal">
+            <div><dt data-i18n="about_focus_label">FOCUS</dt><dd data-i18n="about_focus_value">Full Stack Development</dd></div>
+            <div><dt data-i18n="about_location_label">LOCATION</dt><dd data-i18n="about_location_value">Rio de Janeiro, Brasil</dd></div>
+            <div><dt data-i18n="about_languages_label">LANGUAGES</dt><dd data-i18n="about_languages_value">Português / Inglês C1</dd></div>
+            <div>
+              <dt data-i18n="about_current_label">CURRENTLY</dt>
+              <dd class="current-status">
+                <span data-i18n="about_current_value">Evoluindo o Finova</span>
+                <button
+                  class="moon-secret"
+                  id="moon-secret"
+                  type="button"
+                  aria-expanded="false"
+                  aria-controls="moon-tooltip"
+                >
+                  <span aria-hidden="true">☾</span>
+                  <span class="sr-only" data-i18n="moon_label">Mostrar um detalhe secreto</span>
+                </button>
+                <span class="moon-tooltip" id="moon-tooltip" role="tooltip" data-i18n="moon_tooltip">A lua observa em silêncio.</span>
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
 
@@ -296,35 +389,15 @@
 
     <footer class="site-footer"><div class="container"><span>© 2026 Benjamin Montenegro</span><span data-i18n="footer_text">Feito com intenção, HTML, CSS e JavaScript.</span></div></footer>
 
-    <aside class="music-player" id="music-player" aria-label="Player de música">
-      <button
-        class="music-toggle"
-        id="music-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="music-details"
-      >
-        <span class="music-mark" aria-hidden="true">▶</span>
-        <span class="music-summary">
-          <span class="music-label" data-i18n="music_label">NOW PLAYING</span>
-          <strong>Wires</strong>
-          <span>The Neighbourhood</span>
-        </span>
-        <span class="music-indicator" aria-hidden="true"><i></i><i></i><i></i></span>
-      </button>
-      <div class="music-details" id="music-details" hidden>
-        <p data-i18n="music_description">Uma faixa para acompanhar a navegação.</p>
-        <a
-          class="text-link"
-          href="https://open.spotify.com/track/5v8aEcHcaJIGYpfVVPtJjI"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-i18n="music_action"
-        >
-          Ouvir no Spotify ↗
-        </a>
+    <dialog class="portrait-lightbox" id="portrait-lightbox">
+      <div class="portrait-lightbox-content">
+        <img src="assets/foto.JPG" alt="Benjamin Montenegro" />
+        <button class="portrait-close" id="portrait-close" type="button">
+          <span aria-hidden="true">×</span>
+          <span class="sr-only" data-i18n="portrait_close">Fechar foto ampliada</span>
+        </button>
       </div>
-    </aside>
+    </dialog>
 
     <script src="js/script.js"></script>
   </body>

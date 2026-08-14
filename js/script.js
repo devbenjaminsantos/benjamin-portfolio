@@ -1,5 +1,8 @@
 const translations = {
   pt: {
+    page_title: "Benjamin Montenegro — Engenheiro de Software",
+    page_description:
+      "Portfólio de Benjamin Montenegro, engenheiro de software no Rio de Janeiro.",
     skip_link: "Pular para o conteúdo",
     nav_about: "Sobre",
     nav_experience: "Experiência",
@@ -7,18 +10,22 @@ const translations = {
     nav_contact: "Contato",
     hero_label: "I / INTRODUÇÃO",
     hero_greeting: "Olá, meu nome é",
-    hero_role: "FULL STACK DEVELOPER",
+    hero_role: "ENGENHEIRO DE SOFTWARE",
     hero_description:
       "Desenvolvo produtos digitais do front-end à infraestrutura, transformando problemas reais em software claro e sustentável.",
     hero_projects: "Ver projetos ↘",
-    hero_cv: "Download CV ↗",
+    hero_cv_label: "Currículo",
     hero_location: "Rio de Janeiro · Brasil",
     portrait_caption: "Construindo entre interface, sistema e nuvem.",
+    portrait_open: "Ampliar foto",
+    portrait_close: "Fechar foto ampliada",
     about_label: "II / SOBRE",
     about_title:
       "Gosto de entender como as coisas funcionam — e depois descobrir como fazê-las funcionar melhor.",
-    about_description:
-      "Desenvolvedor Full Stack baseado no Rio de Janeiro. Trabalho entre interface, backend, arquitetura e cloud, buscando construir software que seja tão fácil de manter quanto de usar.",
+    about_origin:
+      "Minha relação com tecnologia começou pela curiosidade: não apenas usar, mas entender como computadores geram jogos, adaptam interfaces e tornam uma animação fluida. Foi isso que me trouxe para a programação.",
+    about_evolution:
+      "Comecei pelo front-end, unindo clean code, SEO, UI e UX para criar experiências que façam sentido para quem usa. A vontade de entender como os dados trafegam, são validados e protegidos me levou naturalmente ao desenvolvimento full stack.",
     about_focus_label: "FOCUS",
     about_focus_value: "Full Stack Development",
     about_location_label: "LOCATION",
@@ -103,6 +110,9 @@ const translations = {
     footer_text: "Feito com intenção, HTML, CSS e JavaScript.",
   },
   en: {
+    page_title: "Benjamin Montenegro — Software Engineer",
+    page_description:
+      "Benjamin Montenegro's portfolio, software engineer based in Rio de Janeiro.",
     skip_link: "Skip to content",
     nav_about: "About",
     nav_experience: "Experience",
@@ -110,18 +120,22 @@ const translations = {
     nav_contact: "Contact",
     hero_label: "I / INTRODUCTION",
     hero_greeting: "Hello, my name is",
-    hero_role: "FULL STACK DEVELOPER",
+    hero_role: "SOFTWARE ENGINEER",
     hero_description:
       "I build digital products from front-end to infrastructure, turning real problems into clear, sustainable software.",
     hero_projects: "View projects ↘",
-    hero_cv: "Download CV ↗",
+    hero_cv_label: "Resume",
     hero_location: "Rio de Janeiro · Brazil",
     portrait_caption: "Building across interface, system and cloud.",
+    portrait_open: "Enlarge photo",
+    portrait_close: "Close enlarged photo",
     about_label: "II / ABOUT",
     about_title:
       "I like understanding how things work — then figuring out how to make them work better.",
-    about_description:
-      "Full Stack Developer based in Rio de Janeiro. I work across interface, backend, architecture and cloud, building software that is as easy to maintain as it is to use.",
+    about_origin:
+      "My relationship with technology began with curiosity: not just using it, but understanding how computers render games, adapt interfaces and make animation feel fluid. That is what brought me to programming.",
+    about_evolution:
+      "I started in front-end, combining clean code, SEO, UI and UX to create experiences that make sense to the people using them. Wanting to understand how data travels, is validated and protected naturally led me to full-stack development.",
     about_focus_label: "FOCUS",
     about_focus_value: "Full Stack Development",
     about_location_label: "LOCATION",
@@ -218,9 +232,15 @@ const musicToggle = document.getElementById("music-toggle");
 const musicDetails = document.getElementById("music-details");
 const moonSecret = document.getElementById("moon-secret");
 const moonTooltip = document.getElementById("moon-tooltip");
+const portraitTrigger = document.getElementById("portrait-trigger");
+const portraitLightbox = document.getElementById("portrait-lightbox");
+const portraitClose = document.getElementById("portrait-close");
 
 function applyLanguage(language) {
   const dictionary = translations[language];
+
+  document.title = dictionary.page_title;
+  document.querySelector('meta[name="description"]').content = dictionary.page_description;
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const value = dictionary[element.dataset.i18n];
@@ -271,6 +291,12 @@ function setMusicPlayer(open) {
 }
 
 musicToggle.addEventListener("click", () => setMusicPlayer(!musicPlayer.classList.contains("is-open")));
+
+portraitTrigger.addEventListener("click", () => portraitLightbox.showModal());
+portraitClose.addEventListener("click", () => portraitLightbox.close());
+portraitLightbox.addEventListener("click", (event) => {
+  if (event.target === portraitLightbox) portraitLightbox.close();
+});
 
 function setMoonSecret(open) {
   moonSecret.setAttribute("aria-expanded", String(open));
