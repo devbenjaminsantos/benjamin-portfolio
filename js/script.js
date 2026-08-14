@@ -69,14 +69,13 @@ const translations = {
     experience_rego_status: "Site institucional · manutenção sob demanda",
     experience_kidilicia_period: "ABR 2026 — ATUAL",
     experience_kidilicia_status: "Cardápio digital · em desenvolvimento",
-    experience_contracts_action: "Conhecer projetos ↘",
     quote_text:
       "“A liberdade é pouco. O que eu desejo ainda não tem nome.”",
     quote_author: "Clarice Lispector",
-    work_label: "IV / PROJETOS SELECIONADOS",
-    work_title: "Projetos<br /><em>selecionados.</em>",
+    work_label: "IV / PROJETOS AUTORAIS",
+    work_title: "Projetos<br /><em>autorais.</em>",
     work_description:
-      "Alguns produtos que representam melhor como penso, construo e resolvo problemas.",
+      "Produtos independentes em que posso explorar e mostrar cada decisão, da interface à arquitetura.",
     finova_kicker: "FINANÇAS PESSOAIS / SAAS-LIKE",
     finova_hook:
       "Uma aplicação financeira pessoal construída para transformar rotina, metas e gastos em uma visão mais clara.",
@@ -88,18 +87,20 @@ const translations = {
     metadata_idea_label: "IDEIA CENTRAL",
     project_live: "Ver projeto ↗",
     project_code: "Código ↗",
-    rego_kicker: "TRABALHO INDEPENDENTE / 2025",
-    rego_hook:
-      "Identidade e experiência digital para uma consultoria de cidadania europeia e serviços internacionais.",
-    rego_role: "Design / Front-End",
-    rego_idea:
-      "Organizar informação complexa em uma jornada direta para contato.",
-    kidilicia_kicker: "EM DESENVOLVIMENTO",
-    kidilicia_hook:
-      "Um cardápio digital pensado para encurtar o caminho entre fome, escolha e pedido.",
-    kidilicia_role: "Front-End / Produto",
-    kidilicia_idea:
-      "Guiar escolhas e entregar o pedido completo pelo WhatsApp.",
+    runbase_kicker: "OPERAÇÕES INTERNAS / EM DESENVOLVIMENTO",
+    runbase_hook:
+      "Sistema administrativo para centralizar clientes, planos, pedidos, usuários e indicadores de negócios com operações recorrentes.",
+    runbase_point_1:
+      "Gestão operacional de clientes, planos, pedidos e usuários internos.",
+    runbase_point_2:
+      "API em ASP.NET Core com arquitetura em camadas e persistência no Neon PostgreSQL.",
+    runbase_point_3:
+      "Autenticação com JWT, rotação de refresh tokens e controle de acesso por função.",
+    runbase_point_4:
+      "Testes automatizados, Docker e pipeline de CI/CD pelo GitHub Actions.",
+    runbase_role: "Full Stack / Produto",
+    runbase_idea:
+      "Dar clareza e controle à operação interna de negócios recorrentes.",
     tools_label: "V / FERRAMENTAS",
     tools_title: "Ferramentas mudam.<br /><em>Fundamentos permanecem.</em>",
     tools_frontend: "FRONT-END",
@@ -203,14 +204,13 @@ const translations = {
     experience_rego_status: "Institutional website · on-demand maintenance",
     experience_kidilicia_period: "APR 2026 — PRESENT",
     experience_kidilicia_status: "Digital menu · in development",
-    experience_contracts_action: "View projects ↘",
     quote_text:
       "“Freedom is little. What I desire still has no name.”",
     quote_author: "Clarice Lispector",
-    work_label: "IV / SELECTED WORK",
-    work_title: "Selected<br /><em>work.</em>",
+    work_label: "IV / INDEPENDENT PROJECTS",
+    work_title: "Independent<br /><em>projects.</em>",
     work_description:
-      "A few products that best represent how I think, build and solve problems.",
+      "Independent products where I can explore and share every decision, from interface to architecture.",
     finova_kicker: "PERSONAL FINANCE / SAAS-LIKE",
     finova_hook:
       "A personal finance app built to turn routines, goals and expenses into a clearer picture.",
@@ -222,18 +222,20 @@ const translations = {
     metadata_idea_label: "CORE IDEA",
     project_live: "View project ↗",
     project_code: "Code ↗",
-    rego_kicker: "INDEPENDENT WORK / 2025",
-    rego_hook:
-      "Digital identity and experience for a European citizenship and international services consultancy.",
-    rego_role: "Design / Front-End",
-    rego_idea:
-      "Organize complex information into a direct journey to contact.",
-    kidilicia_kicker: "IN DEVELOPMENT",
-    kidilicia_hook:
-      "A digital menu designed to shorten the journey between hunger, choice and order.",
-    kidilicia_role: "Front-End / Product",
-    kidilicia_idea:
-      "Guide choices and send the complete order through WhatsApp.",
+    runbase_kicker: "INTERNAL OPERATIONS / IN DEVELOPMENT",
+    runbase_hook:
+      "An administrative system that centralizes clients, plans, orders, users and indicators for recurring business operations.",
+    runbase_point_1:
+      "Operational management for clients, plans, orders and internal users.",
+    runbase_point_2:
+      "ASP.NET Core API with layered architecture and persistence in Neon PostgreSQL.",
+    runbase_point_3:
+      "JWT authentication, refresh token rotation and role-based access control.",
+    runbase_point_4:
+      "Automated tests, Docker and a CI/CD pipeline with GitHub Actions.",
+    runbase_role: "Full Stack / Product",
+    runbase_idea:
+      "Bring clarity and control to the internal operation of recurring businesses.",
     tools_label: "V / TOOLS",
     tools_title: "Tools change.<br /><em>Fundamentals remain.</em>",
     tools_frontend: "FRONT-END",

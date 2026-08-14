@@ -450,8 +450,6 @@ h1 span { display: block; font-style: italic; }
 .contract-project-row > span { color: var(--accent); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; }
 .contract-project-row strong { font-size: 0.96rem; font-weight: 500; }
 .contract-project-row p { margin-top: 0.25rem; color: var(--text-muted); font-size: 0.87rem; }
-.timeline-entry-contracts .text-link { margin-top: 1.5rem; }
-
 .interlude { padding-block: clamp(7rem, 14vw, 13rem); border-top: 1px solid var(--border); }
 .ellie-interlude { min-height: clamp(560px, 62vw, 780px); padding-block: clamp(4rem, 9vw, 8rem); overflow: hidden; background: var(--bg-deep); }
 .ellie-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 0.48fr); min-height: clamp(450px, 48vw, 620px); }
@@ -502,6 +500,14 @@ h1 span { display: block; font-style: italic; }
 .project-metadata dt { color: var(--accent); }
 .project-metadata dd { color: var(--text-soft); font-size: 0.88rem; }
 .project-actions { display: flex; gap: 1.4rem; flex-wrap: wrap; margin-top: auto; padding-top: 2rem; }
+
+.project-runbase { margin-top: clamp(5rem, 12vw, 11rem); }
+.runbase-media { min-height: 430px; background: #020611; }
+.runbase-media img { object-fit: contain; }
+.project-highlights { display: grid; gap: 0.65rem; margin-top: 1.7rem; }
+.project-highlights li { position: relative; padding-left: 1.1rem; color: var(--text-soft); font-size: 0.9rem; line-height: 1.55; }
+.project-highlights li::before { position: absolute; top: 0.68em; left: 0; width: 4px; height: 4px; content: ""; background: var(--accent); transform: rotate(45deg); }
+.project-runbase .project-metadata { margin-top: 1.8rem; }
 
 .project-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(5rem, 12vw, 11rem); }
 .project-secondary { display: grid; grid-template-columns: minmax(160px, 0.7fr) minmax(210px, 1fr); gap: 1.6rem; padding-top: 1.4rem; }
@@ -677,7 +683,7 @@ h1 span { display: block; font-style: italic; }
   .ellie-reveal { width: 100%; }
   .ellie-reveal img { height: 540px; object-position: 50% 62%; }
   .project-number { order: -1; }
-  .finova-media { min-height: 280px; }
+  .finova-media, .runbase-media { min-height: 280px; }
   .project-copy h3 { font-size: clamp(3.4rem, 18vw, 5rem); }
   .project-pair { grid-template-columns: 1fr; margin-top: 5rem; }
   .project-secondary { grid-template-columns: minmax(120px, 0.65fr) 1fr; }
