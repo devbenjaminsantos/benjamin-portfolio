@@ -569,7 +569,7 @@ h1 span { display: block; font-style: italic; }
 .contact-links a { display: grid; grid-template-columns: 8rem 1fr auto; gap: 1rem; align-items: center; padding-block: 1rem; border-bottom: 1px solid var(--border); transition: color 180ms ease; }
 .contact-links a:hover { color: var(--accent); }
 .contact-links span { color: var(--accent); font-family: var(--mono); font-size: 0.63rem; letter-spacing: 0.1em; }
-.contact-links strong { font-size: 0.94rem; font-weight: 500; }
+.contact-links strong { min-width: 0; overflow-wrap: anywhere; font-size: 0.94rem; font-weight: 500; }
 .contact-links i { font-style: normal; }
 
 .site-footer { padding-block: 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-family: var(--mono); font-size: 0.61rem; letter-spacing: 0.08em; text-transform: uppercase; }
