@@ -426,24 +426,31 @@ h1 span { display: block; font-style: italic; }
 .section-heading h2 em, .contact h2 em { font-weight: 400; }
 .section-heading > p:not(.section-label) { max-width: 52ch; margin-top: 1.4rem; color: var(--text-soft); }
 
-.experience-feature { display: grid; grid-template-columns: minmax(180px, 0.55fr) minmax(280px, 1.1fr) minmax(120px, 0.42fr) minmax(120px, 0.42fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; margin-top: clamp(3rem, 8vw, 8rem); padding-block: 2rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.experience-timeline { position: relative; margin-top: clamp(4rem, 9vw, 8rem); }
+.experience-timeline::before { position: absolute; top: 0.45rem; bottom: 0; left: 0; width: 1px; content: ""; background: var(--border-strong); }
 
-.experience-heading h3 { margin-top: 0.65rem; font-size: clamp(1.6rem, 2.8vw, 2.4rem); font-weight: 500; letter-spacing: -0.035em; }
-.experience-heading .role { margin-top: 0.75rem; }
-.experience-content .lead { font-size: 1.08rem; }
+.timeline-entry { position: relative; display: grid; grid-template-columns: minmax(210px, 0.58fr) minmax(0, 1.2fr); gap: clamp(2rem, 7vw, 7rem); padding: 0 0 clamp(4.5rem, 9vw, 8rem) clamp(2.4rem, 4vw, 3.5rem); }
+.timeline-entry:last-child { padding-bottom: 0; }
+.timeline-node { position: absolute; top: 0.25rem; left: -5px; width: 11px; height: 11px; border: 1px solid var(--accent); border-radius: 50%; background: var(--bg); box-shadow: 0 0 0 6px var(--bg); }
+.timeline-entry-current .timeline-node { background: var(--accent); }
 
-.numbered-list { display: grid; gap: 1.1rem; margin-top: 2rem; counter-reset: item; }
-.numbered-list li { display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.85rem; color: var(--text-soft); font-size: 0.94rem; counter-increment: item; }
-.numbered-list li::before { content: "0" counter(item); color: var(--accent); font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.07em; }
+.timeline-heading h3 { margin-top: 0.75rem; font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3.35rem); font-weight: 500; line-height: 0.95; letter-spacing: -0.045em; }
+.timeline-heading .role { margin-top: 1rem; }
+.timeline-content .lead { max-width: 52ch; font-size: 1.08rem; }
+.timeline-heading h3 a, .contract-project-row strong a { display: inline-flex; align-items: baseline; gap: 0.35rem; transition: color 180ms ease; }
+.timeline-heading h3 a:hover, .timeline-heading h3 a:focus-visible, .contract-project-row strong a:hover, .contract-project-row strong a:focus-visible { color: var(--accent); }
+.external-mark { color: var(--accent); font-family: var(--mono); font-size: 0.52em; letter-spacing: 0; }
 
-.impact-stat { padding-top: 0.5rem; }
-.impact-stat strong { display: block; color: var(--accent); font-family: var(--serif); font-size: clamp(3.6rem, 5vw, 5.6rem); font-weight: 500; line-height: 0.8; letter-spacing: -0.08em; }
-.impact-stat span { display: block; margin-top: 0.85rem; color: var(--text-muted); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; line-height: 1.5; text-transform: uppercase; }
-.impact-stat.secondary strong { color: var(--text); }
+.timeline-list { display: grid; gap: 0.85rem; margin-top: 1.8rem; }
+.timeline-list li { position: relative; padding-left: 1.35rem; color: var(--text-soft); font-size: 0.94rem; }
+.timeline-list li::before { position: absolute; top: 0.78em; left: 0; width: 0.55rem; height: 1px; content: ""; background: var(--accent); }
 
-.independent-work { display: grid; grid-template-columns: 0.6fr 1fr auto; align-items: center; gap: 2rem; padding-block: 1.6rem; border-bottom: 1px solid var(--border); }
-.independent-work p:not(.eyebrow) { color: var(--text-muted); font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.08em; }
-.independent-work > p { color: var(--text-soft) !important; font-family: var(--sans) !important; font-size: 0.98rem !important; letter-spacing: 0 !important; }
+.contract-projects { margin-top: 2rem; border-top: 1px solid var(--border); }
+.contract-project-row { display: grid; grid-template-columns: 9rem 1fr; gap: 1.25rem; padding-block: 1.1rem; border-bottom: 1px solid var(--border); }
+.contract-project-row > span { color: var(--accent); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; }
+.contract-project-row strong { font-size: 0.96rem; font-weight: 500; }
+.contract-project-row p { margin-top: 0.25rem; color: var(--text-muted); font-size: 0.87rem; }
+.timeline-entry-contracts .text-link { margin-top: 1.5rem; }
 
 .interlude { padding-block: clamp(7rem, 14vw, 13rem); border-top: 1px solid var(--border); }
 .ellie-interlude { min-height: clamp(560px, 62vw, 780px); padding-block: clamp(4rem, 9vw, 8rem); overflow: hidden; background: var(--bg-deep); }
@@ -633,9 +640,6 @@ h1 span { display: block; font-style: italic; }
   .metadata-list div:nth-child(n + 3) { border-top: 1px solid var(--border); }
   .work-heading { display: block; }
   .work-heading > p { margin-top: 1.4rem; }
-  .experience-feature { grid-template-columns: minmax(180px, 0.6fr) 1fr 0.36fr; }
-  .impact-stat.secondary { grid-column: 3; }
-  .experience-content { grid-row: span 2; }
   .project-primary { grid-template-columns: 2.5rem minmax(220px, 0.75fr) minmax(260px, 0.9fr); }
   .project-pair { gap: 2.5rem; }
   .project-secondary { grid-template-columns: 1fr; }
@@ -665,10 +669,8 @@ h1 span { display: block; font-style: italic; }
   .metadata-list div { padding-inline: 0; }
   .metadata-list div + div { border-top: 1px solid var(--border); border-left: 0; }
   .chapter-intro h2, .section-heading h2, .contact h2 { font-size: clamp(3.1rem, 15vw, 4.9rem); }
-  .experience-feature { grid-template-columns: 1fr 1fr; gap: 2rem 1.25rem; }
-  .experience-heading, .experience-content { grid-column: 1 / -1; }
-  .impact-stat.secondary { grid-column: auto; }
-  .independent-work { grid-template-columns: 1fr; gap: 1rem; }
+  .timeline-entry { grid-template-columns: 1fr; gap: 1.5rem; padding-left: 2rem; }
+  .contract-project-row { grid-template-columns: 1fr; gap: 0.4rem; }
   .project-primary { grid-template-columns: 1fr; gap: 1.5rem; }
   .ellie-interlude { min-height: 590px; padding-block: 3rem; }
   .ellie-layout { grid-template-columns: 0.3fr minmax(0, 0.7fr); min-height: 520px; }
