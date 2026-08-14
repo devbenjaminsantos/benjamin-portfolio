@@ -27,6 +27,8 @@ const translations = {
     about_languages_value: "Português / Inglês C1",
     about_current_label: "CURRENTLY",
     about_current_value: "Evoluindo o Finova",
+    moon_label: "Mostrar um detalhe secreto",
+    moon_tooltip: "A lua observa em silêncio.",
     experience_label: "III / EXPERIÊNCIA",
     experience_title: "Experiência que sai da tela.",
     experience_doss_period: "2025 — PRESENTE",
@@ -95,6 +97,9 @@ const translations = {
       "Aberto a oportunidades, projetos e boas conversas sobre tecnologia.",
     contact_cv_label: "CURRÍCULO",
     contact_cv_value: "Baixar PDF",
+    music_label: "NOW PLAYING",
+    music_description: "Uma faixa para acompanhar a navegação.",
+    music_action: "Ouvir no Spotify ↗",
     footer_text: "Feito com intenção, HTML, CSS e JavaScript.",
   },
   en: {
@@ -125,6 +130,8 @@ const translations = {
     about_languages_value: "Portuguese / English C1",
     about_current_label: "CURRENTLY",
     about_current_value: "Evolving Finova",
+    moon_label: "Show a hidden detail",
+    moon_tooltip: "The moon watches in silence.",
     experience_label: "III / EXPERIENCE",
     experience_title: "Experience beyond the screen.",
     experience_doss_period: "2025 — PRESENT",
@@ -193,6 +200,9 @@ const translations = {
       "Open to opportunities, projects and good conversations about technology.",
     contact_cv_label: "RESUME",
     contact_cv_value: "Download PDF",
+    music_label: "NOW PLAYING",
+    music_description: "A track to accompany your visit.",
+    music_action: "Listen on Spotify ↗",
     footer_text: "Built with intention, HTML, CSS and JavaScript.",
   },
 };
@@ -203,6 +213,11 @@ const themeToggle = document.getElementById("theme-toggle");
 const menuToggle = document.getElementById("menu-toggle");
 const navPanel = document.getElementById("site-nav-links");
 const navLinks = [...document.querySelectorAll(".nav-panel a")];
+const musicPlayer = document.getElementById("music-player");
+const musicToggle = document.getElementById("music-toggle");
+const musicDetails = document.getElementById("music-details");
+const moonSecret = document.getElementById("moon-secret");
+const moonTooltip = document.getElementById("moon-tooltip");
 
 function applyLanguage(language) {
   const dictionary = translations[language];
@@ -249,8 +264,29 @@ function setMenu(open) {
 menuToggle.addEventListener("click", () => setMenu(!navPanel.classList.contains("is-open")));
 navLinks.forEach((link) => link.addEventListener("click", () => setMenu(false)));
 
+function setMusicPlayer(open) {
+  musicPlayer.classList.toggle("is-open", open);
+  musicToggle.setAttribute("aria-expanded", String(open));
+  musicDetails.hidden = !open;
+}
+
+musicToggle.addEventListener("click", () => setMusicPlayer(!musicPlayer.classList.contains("is-open")));
+
+function setMoonSecret(open) {
+  moonSecret.setAttribute("aria-expanded", String(open));
+  moonTooltip.classList.toggle("is-visible", open);
+}
+
+moonSecret.addEventListener("click", () => setMoonSecret(moonSecret.getAttribute("aria-expanded") !== "true"));
+
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") setMenu(false);
+  if (event.key === "Escape") setMusicPlayer(false);
+  if (event.key === "Escape") setMoonSecret(false);
+});
+
+document.addEventListener("click", (event) => {
+  if (!moonSecret.contains(event.target) && !moonTooltip.contains(event.target)) setMoonSecret(false);
 });
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

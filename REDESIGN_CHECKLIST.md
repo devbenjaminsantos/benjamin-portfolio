@@ -9,7 +9,7 @@ O portfólio deve continuar funcionando como uma apresentação profissional mes
 - [x] Escolher o universo de anime: Attack on Titan.
 - [x] Definir a música inicial: “Wires”, The Neighbourhood.
 - [x] Definir o destino oficial do player: Spotify.
-- [ ] Definir os metadados visuais do player e adicionar o link oficial de “Wires”.
+- [x] Definir os metadados visuais do player e adicionar o link oficial de “Wires”.
 - [x] Selecionar a imagem da Ellie tocando violão para a intervenção de The Last of Us.
 - [x] Preparar a estrutura para case studies nesta versão; construir as páginas detalhadas posteriormente.
 - [ ] Confirmar dados de formação acadêmica para o capítulo Aprendizado.
@@ -108,18 +108,19 @@ O portfólio deve continuar funcionando como uma apresentação profissional mes
 
 - [ ] Manter a personalidade como camada ambiental, sem seção de hobbies.
 - [x] The Last of Us: usar uma intervenção visual discreta de Ellie em scroll reveal entre Experiência e o interlúdio literário.
-- [ ] The Last of Us: usar a mariposa apenas como easter egg menor.
+- [x] The Last of Us: usar a mariposa apenas como easter egg menor na transição da Ellie.
 - [x] Bloodborne: usar referências discretas na interface.
   - [x] Inserir runas pequenas em divisores ou numeração de capítulos.
   - [x] Usar um único símbolo de lua com tooltip secreto em hover/foco.
   - [x] Deixar a 404 e mensagens de console para uma etapa posterior.
 - [x] Attack on Titan: representar por símbolos e ideias, nunca apenas por personagem exposto.
   - [x] Usar horizonte discreto no Hero como referência à liberdade.
-  - [x] Considerar duas ou três silhuetas de pássaros apenas como detalhe ambiental em desktop.
+  - [x] Usar três silhuetas de pássaros apenas como detalhe ambiental em desktop.
 - [x] Arcane: usar movimento, rabiscos e imperfeições controladas com baixa frequência.
   - [x] Aplicar uma interferência breve no hover de títulos de projeto.
   - [x] Aplicar uma segunda interferência breve na abertura do player de música.
-- [ ] Música: usar player próprio, pequeno e persistente, sem autoplay.
+- [x] Música: usar player próprio, pequeno e persistente, sem autoplay.
+  - [x] Player abre a faixa oficial de “Wires” no Spotify.
 - [ ] Mitologia: manter Argos/Ariadne e outros nomes ligados à função dos produtos.
 - [ ] Limitar os universos culturais ao conjunto definido; uma nova referência precisa substituir ou justificar sua entrada.
 

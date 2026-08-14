@@ -50,6 +50,11 @@
     <main id="conteudo">
       <section class="hero chapter" id="introducao">
         <div class="hero-atmosphere" aria-hidden="true"></div>
+        <div class="hero-horizon" aria-hidden="true">
+          <span class="horizon-bird bird-one"></span>
+          <span class="horizon-bird bird-two"></span>
+          <span class="horizon-bird bird-three"></span>
+        </div>
         <div class="container hero-layout">
           <div class="hero-copy reveal">
             <p class="section-label" data-i18n="hero_label">I / INTRODUÇÃO</p>
@@ -78,7 +83,7 @@
         </div>
       </section>
 
-      <section class="chapter about" id="sobre">
+      <section class="chapter about has-rune" id="sobre" data-rune="ᛟ">
         <div class="container about-layout">
           <div class="chapter-intro reveal">
             <p class="section-label" data-i18n="about_label">II / SOBRE</p>
@@ -92,7 +97,23 @@
               <div><dt data-i18n="about_focus_label">FOCUS</dt><dd data-i18n="about_focus_value">Full Stack Development</dd></div>
               <div><dt data-i18n="about_location_label">LOCATION</dt><dd data-i18n="about_location_value">Rio de Janeiro, Brasil</dd></div>
               <div><dt data-i18n="about_languages_label">LANGUAGES</dt><dd data-i18n="about_languages_value">Português / Inglês C1</dd></div>
-              <div><dt data-i18n="about_current_label">CURRENTLY</dt><dd data-i18n="about_current_value">Evoluindo o Finova</dd></div>
+              <div>
+                <dt data-i18n="about_current_label">CURRENTLY</dt>
+                <dd class="current-status">
+                  <span data-i18n="about_current_value">Evoluindo o Finova</span>
+                  <button
+                    class="moon-secret"
+                    id="moon-secret"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="moon-tooltip"
+                  >
+                    <span aria-hidden="true">☾</span>
+                    <span class="sr-only" data-i18n="moon_label">Mostrar um detalhe secreto</span>
+                  </button>
+                  <span class="moon-tooltip" id="moon-tooltip" role="tooltip" data-i18n="moon_tooltip">A lua observa em silêncio.</span>
+                </dd>
+              </div>
             </dl>
           </div>
         </div>
@@ -144,6 +165,7 @@
               src="assets/ellie-guitar.jpeg"
               alt="Ellie tocando violão em uma floresta"
             />
+            <span class="tlou-moth" aria-hidden="true"></span>
           </figure>
         </div>
       </section>
@@ -155,7 +177,7 @@
         </div>
       </section>
 
-      <section class="chapter selected-work" id="projetos">
+      <section class="chapter selected-work has-rune" id="projetos" data-rune="ᛉ">
         <div class="container">
           <div class="section-heading work-heading reveal">
             <p class="section-label" data-i18n="work_label">IV / SELECTED WORK</p>
@@ -168,7 +190,7 @@
             <div class="project-media finova-media"><img src="assets/finova.png" alt="Interface da aplicação financeira Finova" /></div>
             <div class="project-copy">
               <p class="eyebrow" data-i18n="finova_kicker">PERSONAL FINANCE / SAAS-LIKE</p>
-              <h3>Finova</h3>
+              <h3 class="arcane-title">Finova</h3>
               <p class="project-hook" data-i18n="finova_hook">Uma aplicação financeira pessoal construída para transformar rotina, metas e gastos em uma visão mais clara.</p>
               <dl class="project-metadata">
                 <div><dt>ROLE</dt><dd data-i18n="finova_role">Full Stack / Product</dd></div>
@@ -187,7 +209,7 @@
               <div class="project-media logo-media rego-media"><img src="assets/logo-regobarros.png" alt="Logo da Rego Barros Consultoria" /></div>
               <div class="project-copy">
                 <p class="eyebrow" data-i18n="rego_kicker">INDEPENDENT WORK / 2025</p>
-                <h3>Rego Barros</h3>
+                <h3 class="arcane-title">Rego Barros</h3>
                 <p class="project-hook" data-i18n="rego_hook">Identidade e experiência digital para uma consultoria de cidadania europeia e serviços internacionais.</p>
                 <dl class="project-metadata compact">
                   <div><dt>ROLE</dt><dd data-i18n="rego_role">Design / Front-End</dd></div>
@@ -201,7 +223,7 @@
               <div class="project-media logo-media kidilicia-media"><img src="assets/logo-kidilicia.jpg" alt="Logo da Ki-Dilicia Gourmet" /></div>
               <div class="project-copy">
                 <p class="eyebrow" data-i18n="kidilicia_kicker">IN DEVELOPMENT</p>
-                <h3>Ki-Dilicia</h3>
+                <h3 class="arcane-title">Ki-Dilicia</h3>
                 <p class="project-hook" data-i18n="kidilicia_hook">Um cardápio digital pensado para encurtar o caminho entre fome, escolha e pedido.</p>
                 <dl class="project-metadata compact">
                   <div><dt>ROLE</dt><dd data-i18n="kidilicia_role">Front-End / Product</dd></div>
@@ -231,7 +253,7 @@
         </div>
       </section>
 
-      <section class="chapter learning" id="aprendizado">
+      <section class="chapter learning has-rune" id="aprendizado" data-rune="ᛏ">
         <div class="container">
           <div class="section-heading reveal">
             <p class="section-label" data-i18n="learning_label">VI / LEARNING</p>
@@ -273,6 +295,36 @@
     </main>
 
     <footer class="site-footer"><div class="container"><span>© 2026 Benjamin Montenegro</span><span data-i18n="footer_text">Feito com intenção, HTML, CSS e JavaScript.</span></div></footer>
+
+    <aside class="music-player" id="music-player" aria-label="Player de música">
+      <button
+        class="music-toggle"
+        id="music-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="music-details"
+      >
+        <span class="music-mark" aria-hidden="true">▶</span>
+        <span class="music-summary">
+          <span class="music-label" data-i18n="music_label">NOW PLAYING</span>
+          <strong>Wires</strong>
+          <span>The Neighbourhood</span>
+        </span>
+        <span class="music-indicator" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <div class="music-details" id="music-details" hidden>
+        <p data-i18n="music_description">Uma faixa para acompanhar a navegação.</p>
+        <a
+          class="text-link"
+          href="https://open.spotify.com/track/5v8aEcHcaJIGYpfVVPtJjI"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="music_action"
+        >
+          Ouvir no Spotify ↗
+        </a>
+      </div>
+    </aside>
 
     <script src="js/script.js"></script>
   </body>
