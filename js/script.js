@@ -113,7 +113,8 @@ const translations = {
     education_label: "FORMAÇÃO",
     certifications_label: "CERTIFICAÇÕES",
     education_title: "Análise e Desenvolvimento de Sistemas",
-    education_detail: "5º período · Formação em andamento",
+    education_institution: "Universidade Estácio de Sá",
+    education_detail: "6º e último período · Formação em andamento",
     cert_1_title: "Curso Básico Frontend",
     cert_1_detail: "Rafael Ferreira / Hotmart · 02/2026",
     cert_2_title: "Curso Backend",
@@ -122,6 +123,11 @@ const translations = {
     cert_3_detail: "Jamilton Damasceno / Udemy · 05/2026",
     cert_4_title: "Curso Banco de Dados",
     cert_4_detail: "Rafael Ferreira / Hotmart · 05/2026",
+    certificate_dialog_label: "CERTIFICADO",
+    certificate_dialog_close: "Fechar certificado",
+    certificate_dialog_empty:
+      "A pré-visualização será adicionada com o arquivo original.",
+    certificate_dialog_open: "Abrir arquivo original ↗",
     contact_label: "VII / CONTATO",
     contact_title: "Vamos construir<br /><em>alguma coisa?</em>",
     contact_description:
@@ -247,7 +253,8 @@ const translations = {
     education_label: "EDUCATION",
     certifications_label: "CERTIFICATIONS",
     education_title: "Systems Analysis and Development",
-    education_detail: "5th semester · Degree in progress",
+    education_institution: "Estácio de Sá University",
+    education_detail: "6th and final semester · Degree in progress",
     cert_1_title: "Basic Frontend Course",
     cert_1_detail: "Rafael Ferreira / Hotmart · 02/2026",
     cert_2_title: "Backend Course",
@@ -256,6 +263,11 @@ const translations = {
     cert_3_detail: "Jamilton Damasceno / Udemy · 05/2026",
     cert_4_title: "Database Course",
     cert_4_detail: "Rafael Ferreira / Hotmart · 05/2026",
+    certificate_dialog_label: "CERTIFICATE",
+    certificate_dialog_close: "Close certificate",
+    certificate_dialog_empty:
+      "The preview will be added with the original document.",
+    certificate_dialog_open: "Open original file ↗",
     contact_label: "VII / CONTACT",
     contact_title: "Shall we build<br /><em>something?</em>",
     contact_description:
@@ -283,6 +295,16 @@ const moonTooltip = document.getElementById("moon-tooltip");
 const portraitTrigger = document.getElementById("portrait-trigger");
 const portraitLightbox = document.getElementById("portrait-lightbox");
 const portraitClose = document.getElementById("portrait-close");
+const certificateTriggers = [...document.querySelectorAll(".certificate-trigger")];
+const certificateDialog = document.getElementById("certificate-dialog");
+const certificateDialogClose = document.getElementById("certificate-dialog-close");
+const certificateDialogTitle = document.getElementById("certificate-dialog-title");
+const certificateDialogDetail = document.getElementById("certificate-dialog-detail");
+const certificatePreviewImage = document.getElementById("certificate-preview-image");
+const certificatePreviewPdf = document.getElementById("certificate-preview-pdf");
+const certificatePreviewEmpty = document.getElementById("certificate-preview-empty");
+const certificateOriginal = document.getElementById("certificate-original");
+let activeCertificateTrigger = null;
 
 function applyLanguage(language) {
   const dictionary = translations[language];
@@ -303,6 +325,8 @@ function applyLanguage(language) {
   root.lang = language === "pt" ? "pt-BR" : "en";
   document.querySelector(".lang-current").textContent = language.toUpperCase();
   localStorage.setItem("language", language);
+
+  if (activeCertificateTrigger) updateCertificateDialog(activeCertificateTrigger);
 }
 
 function applyTheme(theme) {
@@ -344,6 +368,61 @@ portraitTrigger.addEventListener("click", () => portraitLightbox.showModal());
 portraitClose.addEventListener("click", () => portraitLightbox.close());
 portraitLightbox.addEventListener("click", (event) => {
   if (event.target === portraitLightbox) portraitLightbox.close();
+});
+
+function updateCertificateDialog(trigger) {
+  const title = trigger.querySelector("h3").textContent;
+  const detail = trigger.querySelector("p").textContent;
+  const source = trigger.dataset.certificateSrc || "";
+  const isPdf = source.toLowerCase().endsWith(".pdf");
+
+  certificateDialogTitle.textContent = title;
+  certificateDialogDetail.textContent = detail;
+  certificatePreviewImage.hidden = true;
+  certificatePreviewPdf.hidden = true;
+  certificatePreviewEmpty.hidden = Boolean(source);
+  certificateOriginal.hidden = !source;
+
+  if (!source) return;
+
+  certificateOriginal.href = source;
+  if (isPdf) {
+    certificatePreviewPdf.src = source;
+    certificatePreviewPdf.title = title;
+    certificatePreviewPdf.hidden = false;
+    return;
+  }
+
+  certificatePreviewImage.src = source;
+  certificatePreviewImage.alt = title;
+  certificatePreviewImage.hidden = false;
+}
+
+function closeCertificateDialog() {
+  certificateDialog.close();
+  certificatePreviewPdf.removeAttribute("src");
+  activeCertificateTrigger = null;
+}
+
+certificateTriggers.forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    activeCertificateTrigger = trigger;
+    updateCertificateDialog(trigger);
+    certificateDialog.showModal();
+  });
+});
+
+certificateDialogClose.addEventListener("click", closeCertificateDialog);
+certificateDialog.addEventListener("click", (event) => {
+  if (event.target === certificateDialog) closeCertificateDialog();
+});
+certificatePreviewImage.addEventListener("error", () => {
+  certificatePreviewImage.hidden = true;
+  certificatePreviewEmpty.hidden = false;
+});
+certificateDialog.addEventListener("close", () => {
+  certificatePreviewPdf.removeAttribute("src");
+  activeCertificateTrigger = null;
 });
 
 function setMoonSecret(open) {

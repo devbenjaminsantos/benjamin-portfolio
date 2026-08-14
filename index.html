@@ -385,14 +385,15 @@
             <div class="education-block">
               <p class="eyebrow" data-i18n="education_label">FORMAÇÃO</p>
               <h3 data-i18n="education_title">Análise e Desenvolvimento de Sistemas</h3>
-              <p data-i18n="education_detail">5º período · Formação em andamento</p>
+              <p class="education-institution" data-i18n="education_institution">Universidade Estácio de Sá</p>
+              <p class="education-detail" data-i18n="education_detail">6º e último período · Formação em andamento</p>
             </div>
             <div class="certifications-list">
               <p class="eyebrow" data-i18n="certifications_label">CERTIFICAÇÕES</p>
-              <article><div><h3 data-i18n="cert_1_title">Curso Básico Frontend</h3><p data-i18n="cert_1_detail">Rafael Ferreira / Hotmart · 02/2026</p></div><span>01</span></article>
-              <article><div><h3 data-i18n="cert_2_title">Curso Backend</h3><p data-i18n="cert_2_detail">Rafael Ferreira / Hotmart · 03/2026</p></div><span>02</span></article>
-              <article><div><h3 data-i18n="cert_3_title">Desenvolvimento Web com Python e Django</h3><p data-i18n="cert_3_detail">Jamilton Damasceno / Udemy · 05/2026</p></div><span>03</span></article>
-              <article><div><h3 data-i18n="cert_4_title">Curso Banco de Dados</h3><p data-i18n="cert_4_detail">Rafael Ferreira / Hotmart · 05/2026</p></div><span>04</span></article>
+              <article><button class="certificate-trigger" type="button" aria-haspopup="dialog"><div><h3 data-i18n="cert_1_title">Curso Básico Frontend</h3><p data-i18n="cert_1_detail">Rafael Ferreira / Hotmart · 02/2026</p></div><span>01</span></button></article>
+              <article><button class="certificate-trigger" type="button" aria-haspopup="dialog"><div><h3 data-i18n="cert_2_title">Curso Backend</h3><p data-i18n="cert_2_detail">Rafael Ferreira / Hotmart · 03/2026</p></div><span>02</span></button></article>
+              <article><button class="certificate-trigger" type="button" aria-haspopup="dialog"><div><h3 data-i18n="cert_3_title">Desenvolvimento Web com Python e Django</h3><p data-i18n="cert_3_detail">Jamilton Damasceno / Udemy · 05/2026</p></div><span>03</span></button></article>
+              <article><button class="certificate-trigger" type="button" aria-haspopup="dialog"><div><h3 data-i18n="cert_4_title">Curso Banco de Dados</h3><p data-i18n="cert_4_detail">Rafael Ferreira / Hotmart · 05/2026</p></div><span>04</span></button></article>
             </div>
           </div>
         </div>
@@ -425,6 +426,31 @@
           <span aria-hidden="true">×</span>
           <span class="sr-only" data-i18n="portrait_close">Fechar foto ampliada</span>
         </button>
+      </div>
+    </dialog>
+
+    <dialog class="certificate-dialog" id="certificate-dialog" aria-labelledby="certificate-dialog-title">
+      <div class="certificate-dialog-shell">
+        <header class="certificate-dialog-header">
+          <div>
+            <p class="eyebrow" data-i18n="certificate_dialog_label">CERTIFICADO</p>
+            <h2 id="certificate-dialog-title"></h2>
+            <p id="certificate-dialog-detail"></p>
+          </div>
+          <button class="certificate-dialog-close" id="certificate-dialog-close" type="button">
+            <span aria-hidden="true">×</span>
+            <span class="sr-only" data-i18n="certificate_dialog_close">Fechar certificado</span>
+          </button>
+        </header>
+        <div class="certificate-preview">
+          <img id="certificate-preview-image" alt="" hidden />
+          <iframe id="certificate-preview-pdf" title="Certificate preview" hidden></iframe>
+          <div class="certificate-preview-empty" id="certificate-preview-empty">
+            <span aria-hidden="true">+</span>
+            <p data-i18n="certificate_dialog_empty">A pré-visualização será adicionada com o arquivo original.</p>
+          </div>
+        </div>
+        <a class="text-link certificate-original" id="certificate-original" href="#" target="_blank" rel="noopener noreferrer" data-i18n="certificate_dialog_open" hidden>Abrir arquivo original ↗</a>
       </div>
     </dialog>
 
