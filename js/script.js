@@ -4,6 +4,7 @@ const translations = {
     page_description:
       "Portfólio de Benjamin Montenegro, engenheiro de software no Rio de Janeiro.",
     skip_link: "Pular para o conteúdo",
+    language_toggle: "Mudar idioma para inglês",
     nav_about: "Sobre",
     nav_experience: "Experiência",
     nav_work: "Projetos",
@@ -33,7 +34,7 @@ const translations = {
     about_languages_label: "IDIOMAS",
     about_languages_value: "Português / Inglês C1",
     about_current_label: "ATUALMENTE",
-    about_current_value: "Evoluindo o Finova",
+    about_current_value: "Aberto a oportunidades",
     moon_label: "Mostrar um detalhe secreto",
     moon_tooltip: "A lua observa em silêncio.",
     experience_label: "III / EXPERIÊNCIA",
@@ -86,14 +87,6 @@ const translations = {
     runbase_kicker: "OPERAÇÕES INTERNAS / EM DESENVOLVIMENTO",
     runbase_hook:
       "Sistema administrativo para centralizar clientes, planos, pedidos, usuários e indicadores de negócios com operações recorrentes.",
-    runbase_point_1:
-      "Gestão operacional de clientes, planos, pedidos e usuários internos.",
-    runbase_point_2:
-      "API em ASP.NET Core com arquitetura em camadas e persistência no Neon PostgreSQL.",
-    runbase_point_3:
-      "Autenticação com JWT, rotação de refresh tokens e controle de acesso por função.",
-    runbase_point_4:
-      "Testes automatizados, Docker e pipeline de CI/CD pelo GitHub Actions.",
     runbase_role: "Full Stack / Produto",
     runbase_idea:
       "Dar clareza e controle à operação interna de negócios recorrentes.",
@@ -124,7 +117,6 @@ const translations = {
       "A pré-visualização será adicionada com o arquivo original.",
     certificate_dialog_open: "Abrir arquivo original ↗",
     contact_label: "VII / CONTATO",
-    contact_title: "Contato.",
     contact_description:
       "Disponível para oportunidades em engenharia de software e desenvolvimento full stack.",
     contact_cv_label: "CURRÍCULO",
@@ -139,6 +131,7 @@ const translations = {
     page_description:
       "Benjamin Montenegro's portfolio, software engineer based in Rio de Janeiro.",
     skip_link: "Skip to content",
+    language_toggle: "Switch language to Portuguese",
     nav_about: "About",
     nav_experience: "Experience",
     nav_work: "Work",
@@ -168,7 +161,7 @@ const translations = {
     about_languages_label: "LANGUAGES",
     about_languages_value: "Portuguese / English C1",
     about_current_label: "CURRENTLY",
-    about_current_value: "Evolving Finova",
+    about_current_value: "Open to opportunities",
     moon_label: "Show a hidden detail",
     moon_tooltip: "The moon watches in silence.",
     experience_label: "III / EXPERIENCE",
@@ -221,14 +214,6 @@ const translations = {
     runbase_kicker: "INTERNAL OPERATIONS / IN DEVELOPMENT",
     runbase_hook:
       "An administrative system that centralizes clients, plans, orders, users and indicators for recurring business operations.",
-    runbase_point_1:
-      "Operational management for clients, plans, orders and internal users.",
-    runbase_point_2:
-      "ASP.NET Core API with layered architecture and persistence in Neon PostgreSQL.",
-    runbase_point_3:
-      "JWT authentication, refresh token rotation and role-based access control.",
-    runbase_point_4:
-      "Automated tests, Docker and a CI/CD pipeline with GitHub Actions.",
     runbase_role: "Full Stack / Product",
     runbase_idea:
       "Bring clarity and control to the internal operation of recurring businesses.",
@@ -259,7 +244,6 @@ const translations = {
       "The preview will be added with the original document.",
     certificate_dialog_open: "Open original file ↗",
     contact_label: "VII / CONTACT",
-    contact_title: "Contact.",
     contact_description:
       "Available for software engineering and full-stack development opportunities.",
     contact_cv_label: "RESUME",
@@ -272,7 +256,9 @@ const translations = {
 };
 
 const root = document.documentElement;
+const siteHeader = document.querySelector(".site-header");
 const languageToggle = document.getElementById("lang-toggle");
+const languageOptions = [...languageToggle.querySelectorAll(".lang-option")];
 const themeToggle = document.getElementById("theme-toggle");
 const menuToggle = document.getElementById("menu-toggle");
 const navPanel = document.getElementById("site-nav-links");
@@ -312,8 +298,15 @@ function applyLanguage(language) {
     if (value) element.innerHTML = value;
   });
 
+  document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+    const value = dictionary[element.dataset.i18nAriaLabel];
+    if (value) element.setAttribute("aria-label", value);
+  });
+
   root.lang = language === "pt" ? "pt-BR" : "en";
-  document.querySelector(".lang-current").textContent = language.toUpperCase();
+  languageOptions.forEach((option) => {
+    option.classList.toggle("is-active", option.dataset.language === language);
+  });
   localStorage.setItem("language", language);
 
   if (activeCertificateTrigger) updateCertificateDialog(activeCertificateTrigger);
@@ -341,10 +334,43 @@ function setMenu(open) {
   navPanel.classList.toggle("is-open", open);
   menuToggle.classList.toggle("is-open", open);
   menuToggle.setAttribute("aria-expanded", String(open));
+  if (open) siteHeader.classList.remove("is-hidden");
 }
 
 menuToggle.addEventListener("click", () => setMenu(!navPanel.classList.contains("is-open")));
 navLinks.forEach((link) => link.addEventListener("click", () => setMenu(false)));
+
+let previousScrollY = Math.max(window.scrollY, 0);
+let scrollFrame = null;
+
+function updateHeaderVisibility() {
+  const currentScrollY = Math.max(window.scrollY, 0);
+  const isAtTop = currentScrollY <= 24;
+  const isMenuOpen = navPanel.classList.contains("is-open");
+  const focusedElement = document.activeElement;
+  const hasKeyboardFocus =
+    siteHeader.contains(focusedElement) && focusedElement.matches(":focus-visible");
+
+  if (isAtTop || isMenuOpen || hasKeyboardFocus || currentScrollY < previousScrollY) {
+    siteHeader.classList.remove("is-hidden");
+  } else if (currentScrollY > previousScrollY) {
+    siteHeader.classList.add("is-hidden");
+  }
+
+  previousScrollY = currentScrollY;
+  scrollFrame = null;
+}
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (scrollFrame !== null) return;
+    scrollFrame = window.requestAnimationFrame(updateHeaderVisibility);
+  },
+  { passive: true },
+);
+
+siteHeader.addEventListener("focusin", () => siteHeader.classList.remove("is-hidden"));
 
 function setMusicPlayer(open) {
   musicPlayer.classList.toggle("is-open", open);

@@ -37,8 +37,16 @@
         </div>
 
         <div class="nav-controls">
-          <button class="text-control" id="lang-toggle" type="button" aria-label="Alternar idioma">
-            <span class="lang-current">PT</span><span aria-hidden="true">/</span><span>EN</span>
+          <button
+            class="text-control"
+            id="lang-toggle"
+            type="button"
+            aria-label="Mudar idioma para inglês"
+            data-i18n-aria-label="language_toggle"
+          >
+            <span class="lang-option is-active" data-language="pt">PT</span>
+            <span class="lang-divider" aria-hidden="true">/</span>
+            <span class="lang-option" data-language="en">EN</span>
           </button>
           <button class="icon-control" id="theme-toggle" type="button" aria-label="Alternar tema">
             <span aria-hidden="true">◐</span>
@@ -57,7 +65,7 @@
         </div>
         <div class="container hero-layout">
           <div class="hero-copy reveal">
-            <p class="section-label" data-i18n="hero_label">I / INTRODUÇÃO</p>
+            <p class="section-label chapter-marker" data-i18n="hero_label">I / INTRODUÇÃO</p>
             <p class="hero-greeting" data-i18n="hero_greeting">Olá, meu nome é</p>
             <h1>Benjamin <span>Montenegro</span></h1>
             <p class="role" data-i18n="hero_role">ENGENHEIRO DE SOFTWARE</p>
@@ -174,7 +182,7 @@
         <div class="container">
           <div class="about-layout">
             <div class="chapter-intro reveal">
-              <p class="section-label" data-i18n="about_label">II / SOBRE</p>
+              <p class="section-label chapter-marker" data-i18n="about_label">II / SOBRE</p>
               <h2 data-i18n="about_title">Gosto de entender como as coisas funcionam — e depois descobrir como fazê-las funcionar melhor.</h2>
             </div>
             <div class="about-detail reveal">
@@ -194,7 +202,7 @@
             <div>
               <dt data-i18n="about_current_label">ATUALMENTE</dt>
               <dd class="current-status">
-                <span data-i18n="about_current_value">Evoluindo o Finova</span>
+                <span data-i18n="about_current_value">Aberto a oportunidades</span>
                 <button
                   class="moon-secret"
                   id="moon-secret"
@@ -285,19 +293,6 @@
         </div>
       </section>
 
-      <section class="interlude ellie-interlude" aria-label="Intervenção visual">
-        <div class="container ellie-layout">
-          <div class="ellie-space" aria-hidden="true"></div>
-          <figure class="ellie-reveal reveal">
-            <img
-              src="assets/ellie-guitar.jpeg"
-              alt="Ellie tocando violão em uma floresta"
-            />
-            <span class="tlou-moth" aria-hidden="true"></span>
-          </figure>
-        </div>
-      </section>
-
       <section class="interlude quote-interlude" aria-label="Interlúdio literário">
         <div class="quote reveal">
           <blockquote data-i18n="quote_text">“A liberdade é pouco. O que eu desejo ainda não tem nome.”</blockquote>
@@ -332,17 +327,10 @@
 
           <article class="project project-primary project-runbase reveal">
             <div class="project-number">02</div>
-            <div class="project-media runbase-media"><img src="assets/runbase-logo.png" alt="Identidade visual do sistema de gestão RunBase" /></div>
             <div class="project-copy">
               <p class="eyebrow" data-i18n="runbase_kicker">OPERAÇÕES INTERNAS / EM DESENVOLVIMENTO</p>
               <h3 class="arcane-title">RunBase</h3>
               <p class="project-hook" data-i18n="runbase_hook">Sistema administrativo para centralizar clientes, planos, pedidos, usuários e indicadores de negócios com operações recorrentes.</p>
-              <ul class="project-highlights">
-                <li data-i18n="runbase_point_1">Gestão operacional de clientes, planos, pedidos e usuários internos.</li>
-                <li data-i18n="runbase_point_2">API em ASP.NET Core com arquitetura em camadas e persistência no Neon PostgreSQL.</li>
-                <li data-i18n="runbase_point_3">Autenticação com JWT, rotação de refresh tokens e controle de acesso por função.</li>
-                <li data-i18n="runbase_point_4">Testes automatizados, Docker e pipeline de CI/CD pelo GitHub Actions.</li>
-              </ul>
               <dl class="project-metadata">
                 <div><dt data-i18n="metadata_role_label">FUNÇÃO</dt><dd data-i18n="runbase_role">Full Stack / Produto</dd></div>
                 <div><dt data-i18n="metadata_stack_label">TECNOLOGIAS</dt><dd>Next.js · TypeScript · ASP.NET Core · PostgreSQL · Docker</dd></div>
@@ -352,9 +340,16 @@
                 <a class="text-link" href="https://github.com/devbenjaminsantos/runbase-system" target="_blank" rel="noopener noreferrer" data-i18n="project_code">Código <span aria-hidden="true">↗</span></a>
               </div>
             </div>
+            <div class="project-media runbase-media"><img src="assets/runbase-logo.png" alt="Identidade visual do sistema de gestão RunBase" /></div>
           </article>
         </div>
       </section>
+
+      <div class="ellie-interlude" aria-hidden="true">
+        <figure class="ellie-visual">
+          <img src="assets/ellie-guitar.jpeg" alt="" loading="lazy" />
+        </figure>
+      </div>
 
       <section class="chapter tools" id="ferramentas">
         <div class="container tools-layout">
@@ -398,8 +393,7 @@
       <section class="chapter contact" id="contato">
         <div class="container contact-layout reveal">
           <div>
-            <p class="section-label" data-i18n="contact_label">VII / CONTATO</p>
-            <h2 data-i18n-html="contact_title">Contato.</h2>
+            <h2 class="section-label chapter-marker" data-i18n="contact_label">VII / CONTATO</h2>
           </div>
           <div class="contact-copy">
             <p class="lead" data-i18n="contact_description">Disponível para oportunidades em engenharia de software e desenvolvimento full stack.</p>
